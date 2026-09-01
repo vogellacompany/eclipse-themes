@@ -2,10 +2,10 @@
 <?compositeArtifactRepository version='1.0.0'?>
 <repository name='vogella Eclipse Themes' type='org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository' version='1.0.0'>
   <properties size='2'>
-    <property name='p2.timestamp' value='1788215814000'/>
+    <property name='p2.timestamp' value='1788267409000'/>
     <property name='p2.atomic.composite.loading' value='true'/>
   </properties>
   <children size='1'>
-    <child location='releases/1.0.0.202608312236'/>
+    <child location='releases/1.0.0.202609011256'/>
   </children>
 </repository>
