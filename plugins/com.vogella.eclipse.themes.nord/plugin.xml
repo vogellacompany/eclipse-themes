@@ -2,11 +2,11 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension point="org.eclipse.e4.ui.css.swt.theme">
-      <theme id="com.vogella.eclipse.themes.norddark" label="%theme.nord"
+      <theme id="com.vogella.eclipse.themes.norddark" label="%theme.nord" isDarkTheme="true"
              basestylesheeturi="css/nord_gtk.css" os="linux"/>
-      <theme id="com.vogella.eclipse.themes.norddark" label="%theme.nord"
+      <theme id="com.vogella.eclipse.themes.norddark" label="%theme.nord" isDarkTheme="true"
              basestylesheeturi="css/nord_win.css" os="win32"/>
-      <theme id="com.vogella.eclipse.themes.norddark" label="%theme.nord"
+      <theme id="com.vogella.eclipse.themes.norddark" label="%theme.nord" isDarkTheme="true"
              basestylesheeturi="css/nord_mac.css" os="macosx"/>
    </extension>
 </plugin>

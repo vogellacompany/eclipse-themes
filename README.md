@@ -119,11 +119,10 @@ the preference sheets through `platform:/plugin/<bundle>/css/...` URIs, and ever
 A copy that keeps the old name silently renders with the old theme's palette when that bundle
 is installed, and renders black when it is not.
 
-Then rename the theme id and the `%theme.*` key pair in `plugin.xml` and `plugin.properties`,
-keeping in mind that `ThemeEngine` decides whether to put GTK itself into dark mode by testing
-whether the theme id contains `dark`, so a dark theme needs it in the id and a light theme must
-not have it,
-rename the `.project` name and `Automatic-Module-Name`, replace the palette values and the
+Then rename the theme id and the `%theme.*` key pair in `plugin.xml` and `plugin.properties`.
+Set `isDarkTheme` on every `<theme>` element, which the platform reads from 2026-12 on.
+Older releases still test whether the theme id contains `dark`, so a dark theme keeps `dark` in its id as well and a light theme must not have it.
+Then rename the `.project` name and `Automatic-Module-Name`, replace the palette values and the
 preference stylesheets (`*_preferences.css` and `*_jdt.css`, plus `vscode_tabs.css` if you
 copied the VS Code theme), add a feature under `features/` and list it in the update site
 `category.xml`.

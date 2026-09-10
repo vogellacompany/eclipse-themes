@@ -213,7 +213,9 @@ This repository shipped exactly that bug.
 behaved differently on the same widgets.
 Fixed here by renaming the id to `com.vogella.eclipse.themes.neondark`.
 
-The platform fix is an explicit attribute on the extension point rather than a naming
-convention nobody documents.
-Until then, any theme author who wants a dark IDE has to put `dark` in the id.
+Fixed upstream in
+[eclipse.platform.ui#4354](https://github.com/eclipse-platform/eclipse.platform.ui/pull/4354)
+for 2026-12: the `<theme>` element takes an `isDarkTheme` attribute and `ITheme.isDark()`
+returns it, with the substring match kept only for themes that do not set it.
+Every theme here declares it, and keeps `dark` in the id for the releases before that.
 

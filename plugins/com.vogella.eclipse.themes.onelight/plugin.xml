@@ -2,11 +2,11 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension point="org.eclipse.e4.ui.css.swt.theme">
-      <theme id="com.vogella.eclipse.themes.onelight" label="%theme.onelight"
+      <theme id="com.vogella.eclipse.themes.onelight" label="%theme.onelight" isDarkTheme="false"
              basestylesheeturi="css/onelight_gtk.css" os="linux"/>
-      <theme id="com.vogella.eclipse.themes.onelight" label="%theme.onelight"
+      <theme id="com.vogella.eclipse.themes.onelight" label="%theme.onelight" isDarkTheme="false"
              basestylesheeturi="css/onelight_win.css" os="win32"/>
-      <theme id="com.vogella.eclipse.themes.onelight" label="%theme.onelight"
+      <theme id="com.vogella.eclipse.themes.onelight" label="%theme.onelight" isDarkTheme="false"
              basestylesheeturi="css/onelight_mac.css" os="macosx"/>
    </extension>
 </plugin>
