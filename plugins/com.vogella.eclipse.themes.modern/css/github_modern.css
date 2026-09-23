@@ -9,4 +9,23 @@
  * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
 
-/* GitHub Dark, additions for the new CSS parser (Eclipse 2026-09 and later). No rule yet. */
+/* GitHub Dark, additions for the new CSS parser (Eclipse 2026-09 and later). */
+
+/* ############################## XML syntax colours ############################## */
+/* From org.eclipse.ui.editors 3.23 (2026-12) the PDE XML editors, the Source tab of
+ * the target editor among them, take their colours from shared colorDefinitions
+ * instead of the editor.color.* keys in github_preferences.css. The platform binds
+ * their dark values to its own dark theme id only, so without this block tags stay
+ * navy on the dark editor. The roles repeat the ones of the older keys. */
+@media (-eclipse-min-bundle-version: "org.eclipse.ui.editors 3.23") {
+	IEclipsePreferences#org-eclipse-ui-workbench:com-vogella-themes-syntax {
+		preferences:
+			'org.eclipse.editors.syntax.tagColor=255,123,114'
+			'org.eclipse.editors.syntax.attributeNameColor=121,192,255'
+			'org.eclipse.editors.syntax.stringColor=165,214,255'
+			'org.eclipse.editors.syntax.commentColor=139,148,158'
+			'org.eclipse.editors.syntax.directiveColor=210,168,255'
+			'org.eclipse.pde.ui.externalizedStringColor=210,168,255'
+	}
+}
+
