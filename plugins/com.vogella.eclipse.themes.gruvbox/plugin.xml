@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.e4.ui.css.swt.theme">
+      <theme id="com.vogella.eclipse.themes.gruvboxdark" label="%theme.gruvbox" isDarkTheme="true"
+             basestylesheeturi="css/gruvbox_gtk.css" os="linux"/>
+      <theme id="com.vogella.eclipse.themes.gruvboxdark" label="%theme.gruvbox" isDarkTheme="true"
+             basestylesheeturi="css/gruvbox_win.css" os="win32"/>
+      <theme id="com.vogella.eclipse.themes.gruvboxdark" label="%theme.gruvbox" isDarkTheme="true"
+             basestylesheeturi="css/gruvbox_mac.css" os="macosx"/>
+   </extension>
+</plugin>

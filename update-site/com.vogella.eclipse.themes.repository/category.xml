@@ -18,6 +18,9 @@
    <feature id="com.vogella.eclipse.themes.onelight.feature" version="0.0.0">
       <category name="com.vogella.eclipse.themes"/>
    </feature>
+   <feature id="com.vogella.eclipse.themes.gruvbox.feature" version="0.0.0">
+      <category name="com.vogella.eclipse.themes"/>
+   </feature>
    <!-- Explicit root, so that the resolution picks this variant and not the legacy one -->
    <feature id="com.vogella.eclipse.themes.modern.feature" version="0.0.0"/>
    <category-def name="com.vogella.eclipse.themes" label="vogella Eclipse Themes">

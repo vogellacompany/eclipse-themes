@@ -1,0 +1,34 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* Gruvbox Material base stylesheet, macOS.
+ *
+ * Import order is load bearing:
+ * 1. platform dark stylesheet, so every later import overrides it
+ * 2. gruvbox palette, registering the shared tokens with the gruvbox values
+ * 3. shared structural rules, resolved against the palette values
+ * 4. preference based recoloring
+ * 5. Java syntax colors
+ */
+
+@import url("platform:/plugin/org.eclipse.ui.themes/css/e4-dark_mac.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.gruvbox/css/gruvbox_palette.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.common/css/structure.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.common/css/egit.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.common/css/mylyn.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.gruvbox/css/gruvbox_preferences.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.gruvbox/css/gruvbox_jdt.css");
+
+/* e4-dark_mac.css unsets this so cocoa keeps drawing buttons natively;
+ * structure.css re-imposes a background, so restore the unset last. */
+Button {
+	background-color: unset;
+}

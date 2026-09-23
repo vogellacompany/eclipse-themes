@@ -13,7 +13,7 @@ In Eclipse: *Help > Install New Software*, and add this update site:
 https://vogellacompany.github.io/eclipse-themes/
 ```
 
-Every theme is a feature of its own, so install one, several or all six.
+Every theme is a feature of its own, so install one, several or all seven.
 Then switch under *Preferences > General > Appearance* to the installed theme.
 
 The site carries the newest build and nothing else, published from `main` by the [Release workflow](.github/workflows/release.yml).
@@ -54,7 +54,7 @@ Atom's One Light palette: a near white editor on a soft grey chrome, with purple
 
 ![One Light](docs/images/one-light.png)
 
-Known issue on GTK: One Light currently renders the whole IDE with a noticeably larger UI font than the five dark themes, which is why fewer views fit in its screenshot above.
+Known issue on GTK: One Light currently renders the whole IDE with a noticeably larger UI font than the dark themes, which is why fewer views fit in its screenshot above.
 It is reproducible from a freshly started IDE and it flips the moment you switch between One Light and any of the dark themes, so it is the theme and not the workspace.
 None of the stylesheets set a font size, so the cause is not in this repository's CSS; the working theory is the GTK theme reload that `ThemeEngine` triggers through `Display.setDarkThemePreferred` for a theme whose id does not contain `dark`.
 
@@ -63,6 +63,10 @@ None of the stylesheets set a font size, so the cause is not in this repository'
 Calm arctic blues and frost accents on Polar Night surfaces, following the official Nord palette.
 
 ![Nord](docs/images/nord.png)
+
+### Gruvbox Material
+
+Sainnhe's Gruvbox Material: warm retro colours toned down on soft dark brown surfaces, with red keywords, yellow strings and green functions.
 
 ### AI Neon
 
@@ -76,8 +80,8 @@ The VS Code Dark Modern look, including its tab styling and Dark+ syntax colors.
 
 ![VS Code Dark](docs/images/vscode-dark.png)
 
-All six are the same workspace, the same file and the same maximized window, captured on GTK at 200% scaling.
-The five dark ones differ from each other only in the theme; One Light differs in layout too, for the reason noted above.
+The six screenshots are the same workspace, the same file and the same maximized window, captured on GTK at 200% scaling.
+The dark ones differ from each other only in the theme; One Light differs in layout too, for the reason noted above.
 The orange row selection in the tree and the outline is the desktop accent color rather than the theme: GTK owns tree selection and no stylesheet can set it, see [styling-limits.md](docs/styling-limits.md).
 
 ## Building

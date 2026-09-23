@@ -81,7 +81,7 @@ RegistryFilteredTree {
 	color: '#com-vogella-themes-FG';
 	/* FG, not FG_MUTED. The header band already reads as chrome through its own
 	 * BG_WINDOW background, and muted text on top of that falls under the 4.5:1 of
-	 * WCAG AA in four of the six palettes: nord 2.43:1, dracula 3.36:1, vscode
+	 * WCAG AA in four of the seven palettes: nord 2.43:1, dracula 3.36:1, vscode
 	 * 3.87:1, onelight 4.16:1. FG lands between 9:1 and 17:1 everywhere. */
 	swt-header-color: '#com-vogella-themes-FG';
 	swt-header-background-color: '#com-vogella-themes-BG_WINDOW';

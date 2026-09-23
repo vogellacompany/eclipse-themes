@@ -1,0 +1,301 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* Gruvbox Material preference based recoloring.
+ * Preference values are strings, they cannot reference color tokens, so the
+ * values here are literals from the same palette family. Most repeat a token
+ * value; the ones specific to this layer deliberately do not.
+ */
+
+/* ############################## Editors ############################## */
+
+IEclipsePreferences#org-eclipse-ui-editors:org-eclipse-ui-themes {
+	preferences:
+		'AbstractTextEditor.Color.Background.SystemDefault=false'
+		'AbstractTextEditor.Color.SelectionForeground.SystemDefault=false'
+		'AbstractTextEditor.Color.SelectionBackground.SystemDefault=false'
+		'AbstractTextEditor.Color.Foreground.SystemDefault=false'
+		'AbstractTextEditor.Color.Background=41,40,40'
+		'AbstractTextEditor.Color.Foreground=212,190,152'
+		'AbstractTextEditor.Color.SelectionBackground=69,64,61'
+		'AbstractTextEditor.Color.SelectionForeground=221,199,161'
+		'AbstractTextEditor.Color.FindScope=90,82,76'
+		'asOccurencesIndicationColor=69,64,61'
+		'breakpointIndicationColor=234,105,98'
+		'currentIPColor=216,166,87'
+		'currentLineColor=50,48,47'
+		'deletionIndicationColor=212,190,152'
+		'filteredSearchResultIndicationColor=90,82,76'
+		'hyperlinkColor=169,182,101'
+		'hyperlinkColor.SystemDefault=false'
+		'infoIndicationColor=125,174,163'
+		'lineNumberColor=124,111,100'
+		'linked.slave.color=125,174,163'
+		'matchingTagIndicationColor=69,64,61'
+		'occurrenceIndicationColor=90,82,76'
+		'overrideIndicatorColor=146,131,116'
+		'printMarginColor=69,64,61'
+		'searchResultHighlighting=false'
+		'searchResultIndication=true'
+		'searchResultIndicationColor=90,82,76'
+		'searchResultTextStyle=BOX'
+		'secondaryIPColor=193,143,65'
+		'spellingIndicationColor=216,166,87'
+		'writeOccurrenceIndicationColor=90,82,76'
+		'org.eclipse.ui.editors.stickyLinesSeparatorColor=69,64,61'
+}
+
+/* ############################## Workbench ############################## */
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-ui-themes {
+	preferences:
+		'ACTIVE_HYPERLINK_COLOR=143,154,82'
+		'CONFLICTING_COLOR=234,105,98'
+		'CONTENT_ASSIST_BACKGROUND_COLOR=50,48,47'
+		'CONTENT_ASSIST_FOREGROUND_COLOR=212,190,152'
+		'org.eclipse.ui.workbench.INFORMATION_BACKGROUND=50,48,47'
+		'org.eclipse.ui.workbench.INFORMATION_FOREGROUND=212,190,152'
+		'org.eclipse.ui.workbench.HOVER_BACKGROUND=50,48,47'
+		'org.eclipse.ui.workbench.HOVER_FOREGROUND=212,190,152'
+		'org.eclipse.ui.workbench.FORM_HEADING_ERROR_COLOR=234,105,98'
+		'org.eclipse.ui.workbench.FORM_HEADING_WARNING_COLOR=216,166,87'
+		'org.eclipse.ui.workbench.FORM_HEADING_INFO_COLOR=125,174,163'
+		'ERROR_COLOR=234,105,98'
+		'HYPERLINK_COLOR=169,182,101'
+		'INCOMING_COLOR=169,182,101'
+		'OUTGOING_COLOR=212,190,152'
+		'RESOLVED_COLOR=169,182,101'
+		'EDITION_COLOR=212,190,152'
+		'org.eclipse.search.ui.match.highlight=79,66,46'
+		'org.eclipse.ui.editors.rangeIndicatorColor=104,148,138'
+		'org.eclipse.jface.REVISION_NEWEST_COLOR=169,182,101'
+		'org.eclipse.jface.REVISION_OLDEST_COLOR=211,134,155'
+		'org.eclipse.ui.editors.inlineAnnotationColor=146,131,116'
+}
+
+/* ############################## Heap status ############################## */
+/* Hidden rather than styled. HeapStatus.getForeground() returns a hardcoded
+ * usedMemCol = new Color(160, 160, 160) whatever a theme sets, so the used
+ * memory bar paints light grey on every dark surface here and reads as broken.
+ * Fixed upstream by deriving the colours from the control's own background and
+ * foreground; once that is in the target platform, drop this block and the two
+ * rules in structure.css become sufficient on their own.
+ * The node is org.eclipse.ui, not org.eclipse.ui.workbench, and WorkbenchWindow
+ * reads it once while building the window, so it applies from the next start. */
+
+IEclipsePreferences#org-eclipse-ui:org-eclipse-ui-themes {
+	preferences:
+		'SHOW_MEMORY_MONITOR=false'
+}
+
+/* ############################## Console stream colors ############################## */
+
+IEclipsePreferences#org-eclipse-debug-ui:org-eclipse-ui-themes {
+	preferences:
+		'org.eclipse.debug.ui.consoleBackground=41,40,40'
+		'org.eclipse.debug.ui.outColor=212,190,152'
+		'org.eclipse.debug.ui.inColor=169,182,101'
+		'org.eclipse.debug.ui.errorColor=234,105,98'
+		'org.eclipse.debug.ui.changedDebugElement=234,105,98'
+		'org.eclipse.debug.ui.PREF_CHANGED_VALUE_BACKGROUND=69,64,61'
+		'org.eclipse.debug.ui.MemoryHistoryKnownColor=212,190,152'
+		'org.eclipse.debug.ui.MemoryHistoryUnknownColor=146,131,116'
+}
+
+/* Ant colours its build output itself, and org.eclipse.ant.ui binds its dark values
+ * to the platform dark theme id alone, so a third party theme keeps the raw defaults:
+ * pure blue on the information stream, which carries the ordinary build output, and
+ * black on debug. Information follows outColor above, so Ant reads like any other
+ * console. */
+IEclipsePreferences#org-eclipse-ant-ui:org-eclipse-ui-themes {
+	preferences:
+		'org.eclipse.ant.ui.errorColor=234,105,98'
+		'org.eclipse.ant.ui.warningColor=216,166,87'
+		'org.eclipse.ant.ui.informationColor=212,190,152'
+		'org.eclipse.ant.ui.verboseColor=169,182,101'
+		'org.eclipse.ant.ui.debugColor=146,131,116'
+		'org.eclipse.ant.ui.textColor=212,190,152'
+		'org.eclipse.ant.ui.commentsColor=146,131,116'
+		'org.eclipse.ant.ui.tagsColor=231,138,78'
+		'org.eclipse.ant.ui.tagsColor_bold=true'
+		'org.eclipse.ant.ui.constantStringsColor=216,166,87'
+		'org.eclipse.ant.ui.constantStringsColor_italic=true'
+		'org.eclipse.ant.ui.processingInstructionsColor=137,180,130'
+		'org.eclipse.ant.ui.processingInstructionsColor_bold=true'
+		'org.eclipse.ant.ui.dtdColor=146,131,116'
+}
+
+/* ############################## Compare and inline diff ############################## */
+/* Compare binds its dark values to the platform dark theme id, so without this the
+ * inline diff highlights stay the pale pastels of the light defaults. The subtle
+ * shade is the EGit diff background mixed halfway into the editor surface, the
+ * detailed one is that background itself. */
+
+IEclipsePreferences#org-eclipse-ui-editors:com-vogella-themes-compare {
+	preferences:
+		'inlineDiffColor=50,54,48'
+		'detailedInlineDiffColor=59,68,57'
+		'deletionInlineDiffColor=58,46,45'
+		'detailedDeletionInlineDiffColor=76,52,50'
+		'org.eclipse.egit.ui.commitEditor.diffAddedColor=59,68,57'
+		'org.eclipse.egit.ui.commitEditor.diffRemovedColor=76,52,50'
+		'TextOccurrenceIndicationColor=69,64,61'
+}
+
+/* ############################## Manifest, target and generic editors ############################## */
+/* Same trap as Ant: PDE and the generic editor ship dark values bound to the platform
+ * dark theme id alone, so a third party theme keeps the light defaults, down to
+ * 'editor.color.default=212,190,152'. The roles follow the Java syntax colours of this
+ * theme, so a MANIFEST.MF reads like the Java editor next to it. */
+
+IEclipsePreferences#org-eclipse-pde-ui:org-eclipse-pde-ui {
+	preferences:
+		'editor.color.default=212,190,152'
+		'editor.color.xml_comment=146,131,116'
+		'editor.color.string=216,166,87'
+		'editor.color.string_italic=true'
+		'editor.color.externalized_string=137,180,130'
+		'editor.color.externalized_string_italic=true'
+		'editor.color.tag=231,138,78'
+		'editor.color.tag_bold=true'
+		'editor.color.instr=137,180,130'
+		'editor.color.instr_bold=true'
+		'editor.color.header_key=234,105,98'
+		'editor.color.header_key_bold=true'
+		'editor.color.header_osgi=137,180,130'
+		'editor.color.header_assignment=231,138,78'
+		'editor.color.header_assignment_bold=true'
+		'editor.color.header_attributes=125,174,163'
+		'editor.color.header_attributes_italic=true'
+		'editor.color.header_value=216,166,87'
+		'editor.color.header_value_italic=true'
+}
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-pde-genericeditor-extension {
+	preferences:
+		'org.eclipse.pde.genericeditor.extension.editor.color.text=212,190,152'
+		'org.eclipse.pde.genericeditor.extension.editor.color.comment=146,131,116'
+		'org.eclipse.pde.genericeditor.extension.editor.color.quote=216,166,87'
+		'org.eclipse.pde.genericeditor.extension.editor.color.tag=231,138,78'
+		'org.eclipse.pde.genericeditor.extension.editor.color.attribute=125,174,163'
+		'org.eclipse.pde.genericeditor.extension.editor.color.header=146,131,116'
+}
+
+/* The XMI tab of the e4 model editor. Its five XML colours were hardcoded light
+ * values in the bundle's resources.properties and unreachable for CSS, so tags came
+ * out dark navy on a dark surface. They are colorDefinitions since the bundle learned
+ * to follow the active theme, and this block is what fills them in for us. */
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-e4-tools-emf-ui {
+	preferences:
+		'org.eclipse.e4.tools.emf.ui.color.default=212,190,152'
+		'org.eclipse.e4.tools.emf.ui.color.tag=231,138,78'
+		'org.eclipse.e4.tools.emf.ui.color.string=216,166,87'
+		'org.eclipse.e4.tools.emf.ui.color.comment=146,131,116'
+		'org.eclipse.e4.tools.emf.ui.color.procInstr=137,180,130'
+}
+
+IEclipsePreferences#org-eclipse-ui-genericeditor:org-eclipse-ui-genericeditor {
+	preferences:
+		'matchingBracketsColor=168,153,132'
+}
+
+/* ############################## Mylyn ############################## */
+/* See css/mylyn.css for why this is needed. The Task List colours are registered
+ * as colorDefinitions by org.eclipse.mylyn.tasks.ui, twelve of them, of which
+ * Mylyn's own dark sheet fills only seven, so the remaining five stand on their
+ * light defaults even under the stock dark theme. All twelve are covered here. */
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-mylyn-tasks-ui {
+	preferences:
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.today.scheduled=125,174,163'
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.thisweek.scheduled=168,153,132'
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.past.scheduled=234,105,98'
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.past.due=234,105,98'
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.overdue.for.others=216,166,87'
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.today.completed=169,182,101'
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.completed=168,153,132'
+		'org.eclipse.mylyn.tasks.ui.colors.foreground.task.active=137,180,130'
+		'org.eclipse.mylyn.tasks.ui.colors.incoming.background=50,48,47'
+		'org.eclipse.mylyn.tasks.ui.colors.category.gradient.start=50,48,47'
+		'org.eclipse.mylyn.tasks.ui.colors.category.gradient.end=69,64,61'
+		'org.eclipse.mylyn.tasks.ui.color.text.quoted=212,190,152'
+}
+
+/* The WikiText markup editor. These values are CSS fragment strings rather than
+ * the R,G,B of every other preference block here, so they carry hex colours.
+ * The headings step through the palette the way the extension colours Markdown. */
+
+IEclipsePreferences#org-eclipse-mylyn-wikitext-ui {
+	preferences:
+		'block-h1=font-size: 120%; font-weight: bold; color: #ea6962;'
+		'block-h2=font-size: 110%; font-weight: bold; color: #e78a4e;'
+		'block-h3=font-size: 105%; font-weight: bold; color: #d8a657;'
+		'block-h4=font-weight: bold; color: #a9b665;'
+		'block-h5=font-size: 90%; font-weight: bold; color: #7daea3;'
+		'block-h6=font-size: 80%; font-weight: bold; color: #d3869b;'
+		'phrase-code=font-family: monospace; color: #a9b665;'
+		'block-bc=font-family: monospace; color: #a9b665;'
+}
+
+/* ############################## Spring Tools ############################## */
+/* Spring Tools binds all three of its dark stylesheets to
+ * org.eclipse.e4.ui.css.theme.e4_dark alone, so under any other theme the Boot
+ * Dashboard decorations, the Boot marker highlight and the embedded terminal keep
+ * their light defaults. Same trap as EGit, Ant, PDE, Compare, the generic editor
+ * and Mylyn. Harmless when Spring Tools is not installed: nothing reads the keys. */
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-springframework-ide-eclipse-boot-dash {
+	preferences:
+		'org.springframework.ide.eclipse.boot.dash.TextDecorColor=169,182,101'
+		'org.springframework.ide.eclipse.boot.dash.AltTextDecorColor=125,174,163'
+		'org.springframework.ide.eclipse.boot.dash.MutedTextDecorColor=146,131,116'
+}
+
+/* A line highlight rather than text, so it takes the same subdued green as an
+ * added line in a diff instead of a foreground token. */
+IEclipsePreferences#org-eclipse-ui-workbench:org-springframework-tooling-ls-eclipse-commons {
+	preferences:
+		'org.springframework.tooling.ls.eclipse.commons.STS4BootMarkerIndicationColor=59,68,57'
+}
+
+/* cursorAccent is the glyph UNDER the block cursor, so it has to be the terminal
+ * background. Spring Tools sets it to the same white as the cursor itself, which
+ * makes that character disappear; this deviates from their values on purpose. */
+IEclipsePreferences#org-eclipse-ui-workbench:org-springframework-ide-eclipse-xterm {
+	preferences:
+		'org.springframework.ide.eclipse.xterm.background=41,40,40'
+		'org.springframework.ide.eclipse.xterm.foreground=212,190,152'
+		'org.springframework.ide.eclipse.xterm.selection=69,64,61'
+		'org.springframework.ide.eclipse.xterm.cursor=212,190,152'
+		'org.springframework.ide.eclipse.xterm.cursorAccent=41,40,40'
+}
+
+/* ############################## EGit ############################## */
+/* EGit binds its dark preference values to the platform dark theme id alone, so a
+ * third party theme falls back to COLOR_LIST_FOREGROUND on COLOR_LIST_BACKGROUND,
+ * which is black on white. Own pseudo attribute so EGit's own block still applies. */
+
+IEclipsePreferences#org-eclipse-ui-workbench:com-vogella-themes-egit {
+	preferences:
+		'org.eclipse.egit.ui.CommitMessageCommentColor=146,131,116'
+		'org.eclipse.egit.ui.DiffAddBackgroundColor=59,68,57'
+		'org.eclipse.egit.ui.DiffAddForegroundColor=212,190,152'
+		'org.eclipse.egit.ui.DiffHeadlineBackgroundColor=50,48,47'
+		'org.eclipse.egit.ui.DiffHeadlineForegroundColor=212,190,152'
+		'org.eclipse.egit.ui.DiffHunkBackgroundColor=69,64,61'
+		'org.eclipse.egit.ui.DiffHunkForegroundColor=221,199,161'
+		'org.eclipse.egit.ui.DiffRemoveBackgroundColor=76,52,50'
+		'org.eclipse.egit.ui.DiffRemoveForegroundColor=212,190,152'
+		'org.eclipse.egit.ui.IgnoredResourceBackgroundColor=41,40,40'
+		'org.eclipse.egit.ui.IgnoredResourceForegroundColor=146,131,116'
+		'org.eclipse.egit.ui.UncommittedChangeBackgroundColor=41,40,40'
+		'org.eclipse.egit.ui.UncommittedChangeForegroundColor=125,174,163'
+}

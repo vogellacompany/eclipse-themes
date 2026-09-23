@@ -20,5 +20,8 @@
       <stylesheet uri="css/neon_modern.css">
          <themeid refid="com.vogella.eclipse.themes.neondark"/>
       </stylesheet>
+      <stylesheet uri="css/gruvbox_modern.css">
+         <themeid refid="com.vogella.eclipse.themes.gruvboxdark"/>
+      </stylesheet>
    </extension>
 </plugin>
