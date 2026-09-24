@@ -23,8 +23,9 @@
  * Harmless when Mylyn is not installed: the selector matches nothing.
  *
  * Out of reach for any theme, and only fixable in Mylyn itself: the constants in
- * org.eclipse.mylyn.internal.context.ui.ColorMap, which recolour the Package
- * Explorer while a task is active, TaskEditorFindSupport's highlight colours, and
+ * org.eclipse.mylyn.internal.context.ui.ColorMap in Mylyn builds that do not yet
+ * register them as colorDefinitions (the preference sheets cover those that do),
+ * TaskEditorFindSupport's highlight colours, and
  * the SWT.COLOR_WHITE backgrounds in ScheduleDatePicker, PlanningPart, DatePicker
  * and AbstractNotificationPopup.
  */

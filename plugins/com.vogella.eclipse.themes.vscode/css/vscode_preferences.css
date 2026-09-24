@@ -229,6 +229,18 @@ IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-mylyn-tasks-ui {
 		'org.eclipse.mylyn.tasks.ui.color.text.quoted=204,204,204'
 }
 
+/* The Package Explorer colours of the active task context. Mylyn builds that register
+ * them as colorDefinitions default the landmark to near black, unreadable on a dark
+ * part; builds that still hard-code them in ColorMap ignore these keys. */
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-mylyn-context-ui {
+	preferences:
+		'org.eclipse.mylyn.context.ui.colors.foreground.landmark=77,170,252'
+		'org.eclipse.mylyn.context.ui.colors.foreground.predicted=157,157,157'
+		'org.eclipse.mylyn.context.ui.colors.foreground.uninteresting=157,157,157'
+		'org.eclipse.mylyn.context.ui.colors.foreground.relationship=197,134,192'
+}
+
 /* The WikiText markup editor. These values are CSS fragment strings rather than
  * the R,G,B of every other preference block here, so they carry hex colours. */
 
