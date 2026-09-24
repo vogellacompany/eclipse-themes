@@ -68,6 +68,8 @@ Calm arctic blues and frost accents on Polar Night surfaces, following the offic
 
 Sainnhe's Gruvbox Material: warm retro colours toned down on soft dark brown surfaces, with red keywords, yellow strings and green functions.
 
+![Gruvbox Material](docs/images/gruvbox-material.png)
+
 ### AI Neon
 
 Deep blue-violet surfaces with cyan links, tab titles and keylines, and magenta on errors and active links.
