@@ -56,13 +56,13 @@ jobs:
             -Dtycho.pgp.signer.bc.secretKeys=$RUNNER_TEMP/signing-key.asc
 
       # The directory is named after what was actually built, qualifier included,
-      # so a rebuild of the same version never lands on an existing URL. All six
-      # features carry the same qualifier, so any one of them answers for the build.
+      # so a rebuild of the same version never lands on an existing URL.
+      # The main feature carries the build qualifier.
       - name: Determine the built version
         id: version
         run: |
           repository=update-site/com.vogella.eclipse.themes.repository/target/repository
-          jar=$(find "$repository/features" -name 'com.vogella.eclipse.themes.*.feature_*.jar' | sort | head -1)
+          jar=$(find "$repository/features" -name 'com.vogella.eclipse.themes.feature_*.jar' | sort | head -1)
           if [ -z "$jar" ]; then
             echo "No feature jar below $repository/features" >&2
             exit 1

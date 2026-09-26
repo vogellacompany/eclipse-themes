@@ -139,7 +139,7 @@ base_url=https://vogellacompany.github.io/eclipse-themes
 <p>Seven themes for the Eclipse IDE: GitHub Dark, Dracula, One Light, Nord, Gruvbox Material, AI Neon and VS Code Dark.</p>
 <p>Install them in Eclipse with <em>Help &gt; Install New Software</em>, using the update site</p>
 <p><code>$base_url/</code></p>
-<p>Each theme is a feature of its own, so you can install one, several or all seven.</p>
+<p>One feature installs all seven themes.</p>
 <p>This site carries the newest build and nothing else. Older versions are not supported: the previous build is dropped when a new one is published, so update rather than pin.</p>
 <p>Currently published:</p>
 <ul>

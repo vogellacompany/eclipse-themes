@@ -13,7 +13,7 @@ In Eclipse: *Help > Install New Software*, and add this update site:
 https://vogellacompany.github.io/eclipse-themes/
 ```
 
-Every theme is a feature of its own, so install one, several or all seven.
+One feature installs all seven themes.
 Then switch under *Preferences > General > Appearance* to the installed theme.
 
 The site carries the newest build and nothing else, published from `main` by the [Release workflow](.github/workflows/release.yml).
@@ -130,8 +130,7 @@ Set `isDarkTheme` on every `<theme>` element, which the platform reads from 2026
 Older releases still test whether the theme id contains `dark`, so a dark theme keeps `dark` in its id as well and a light theme must not have it.
 Then rename the `.project` name and `Automatic-Module-Name`, replace the palette values and the
 preference stylesheets (`*_preferences.css` and `*_jdt.css`, plus `vscode_tabs.css` if you
-copied the VS Code theme), add a feature under `features/` and list it in the update site
-`category.xml`.
+copied the VS Code theme), and add the plugin to `features/com.vogella.eclipse.themes.feature/feature.xml`.
 Run `./releng/check-tokens.sh` afterwards, it verifies the token contract for every palette it
 finds.
 No pom changes are needed, the pomless aggregator picks up new directories automatically.

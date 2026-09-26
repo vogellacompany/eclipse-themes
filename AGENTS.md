@@ -85,10 +85,10 @@ Only the modern sheets may use what the new engine adds: `@media` blocks (includ
 The base sheets and the legacy sheets must stay free of all of it.
 The lower bound 0.14.800 is the first css.core with the new parser; if `@media` and `:not()` ship in a later version, move both ranges (the two `MANIFEST.MF` files) to that version, do not bump any `Bundle-Version` by hand.
 
-The two bundles sit in features of their own, `com.vogella.eclipse.themes.legacy.feature` and `.modern.feature`, and every theme feature includes both with `optional="true"`.
+The two bundles sit in features of their own, `com.vogella.eclipse.themes.legacy.feature` and `.modern.feature`, and `com.vogella.eclipse.themes.feature` includes both with `optional="true"`.
 p2 turns the `Require-Bundle` range into an install requirement, so a feature listing both bundles directly would install nowhere; with optional includes p2 installs the one that resolves and silently drops the other, and a dropins install gets the same result from plain OSGi resolution.
 An unresolved variant bundle is therefore intended and produces no error and no warning; it shows only in Help > About > Installation Details > Plug-ins.
-After a release, install a theme feature once on an Eclipse before 2026-09 and once on 2026-09 or later and confirm through Installation Details, and through a measured rule, that the right variant is active.
+After a release, install the theme feature once on an Eclipse before 2026-09 and once on 2026-09 or later and confirm through Installation Details, and through a measured rule, that the right variant is active.
 The p2 director does the same check without an IDE, `-verifyOnly` against the built repository plus the release train, once per variant and train; the variant that does not belong must fail with a missing requirement on css.core.
 
 Order between a base sheet and a contributed sheet is extension registry order, not declaration order.
