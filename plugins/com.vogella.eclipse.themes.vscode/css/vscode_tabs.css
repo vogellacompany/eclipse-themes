@@ -9,37 +9,12 @@
  * SPDX-License-Identifier: EPL-2.0
  *******************************************************************************/
 
-/* VS Code tab styling, loaded after structure.css so these rules win.
- * The tab strip is the most recognisable part of VS Code: flat colors,
- * active tab #1F1F1F on #181818 chrome with a #0078D4 keyline on top,
- * no gradients.
- */
+/* VS Code tab overrides on top of structure.css: a keyline on top of every selected
+ * tab, and the selected tab title in SELECTION_FG. */
 
 .MPartStack,
-.MPartStack.active,
-#org-eclipse-ui-editorss CTabFolder {
+.MPartStack.active {
 	swt-selected-highlight-top: true;
-}
-
-.MPartStack.active,
-#org-eclipse-ui-editorss CTabFolder.active {
-	swt-selected-tab-highlight: '#com-vogella-themes-ACCENT';
-}
-
-/* Inactive tabs stay on the chrome color.
- * No swt-selected-tab-fill here: this rule matches view stacks too, and the fill also
- * paints the strip behind the view toolbar, which then no longer matched
- * Composite#ToolbarComposite. Views keep BG_PART from structure.css; only the editor
- * stack below takes the editor surface. */
-CTabFolder {
-	/* One colour, not two: see the note in structure.css. Two values take the gradient
-	 * path and leave the min/max and chevron bars grey. */
-	swt-unselected-tabs-color: '#com-vogella-themes-BG_WINDOW';
-	swt-unselected-hot-tab-color-background: '#com-vogella-themes-BG_RAISED';
-}
-
-#org-eclipse-ui-editorss CTabFolder {
-	swt-selected-tab-fill: '#com-vogella-themes-BG_EDITOR';
 }
 
 CTabItem:selected,

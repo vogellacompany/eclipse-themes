@@ -321,7 +321,6 @@ Composite.ToolbarComposite {
 	background-color: '#com-vogella-themes-BG_WINDOW';
 }
 
-/* A trim bar carries MToolBar too, which the .MTrimBar rule below takes back. */
 ToolBar.MToolBar {
 	background-color: '#com-vogella-themes-BG_WINDOW';
 }
@@ -337,8 +336,8 @@ CTabFolder ToolItem {
 	background-color: '#com-vogella-themes-BG_WINDOW';
 }
 
-/* The main trim is "MTrimBar ToolbarComposite", so the two rules above match it too.
- * Same specificity, later in the file, so these win it back for the trim. */
+/* The platform light sheets paint '.MTrimBar' with a literal colour at class
+ * specificity, which the global surface rule cannot outrank. */
 Composite.MTrimBar {
 	background-color: '#com-vogella-themes-BG_WINDOW';
 }
@@ -472,8 +471,8 @@ FormHeading {
 	color: '#com-vogella-themes-FG';
 }
 
-/* The bare ToolBar rule paints BG_WINDOW, which shows as a chiclet behind the title
- * image and behind the toolbar of a form heading. */
+/* Without this the toolbar of a form heading keeps BG_WINDOW, which shows as a
+ * chiclet behind the title image and behind the toolbar. */
 FormHeading ToolBar {
 	background-color: '#com-vogella-themes-BG_PART';
 	color: '#com-vogella-themes-FG';

@@ -3,7 +3,7 @@
 ## Measure, do not look
 
 A theme change is only done once it has been measured in a running IDE.
-Reading the stylesheet tells you what was asked for, never what is painted, and the gap between the two is where every bug in this repository has lived so far.
+Reading the stylesheet tells you what was asked for, never what is painted.
 The tools below are the Eclipse MCP server's.
 
 ### Read the value the widget actually has
@@ -14,9 +14,8 @@ The tools below are the Eclipse MCP server's.
 - `computed` is what the widget reports back, so it says what SWT ended up with.
 - `origin` is `css` or `widget`, which is how a themed colour is told apart from the window system's default.
 
-`declared` set and `computed` different means something overwrote the theme after it applied.
-That is how the chiclet behind every toolbar icon was traced to `CTabFolder.updateBkImages`, and how the unreadable form field was traced to `.MPart Composite > *` outranking the bare `Text` rule.
-`origin: widget` on a foreground means no rule ever set it, which is how the XMI tab's white-by-default text was found.
+`declared` set and `computed` different means something overwrote the theme after it applied, such as `CTabFolder.updateBkImages` or a more specific rule.
+`origin: widget` on a foreground means no rule ever set it.
 
 ### Read the pixels
 
@@ -48,7 +47,6 @@ CTabFolder { swt-selected-tab-fill: #00ff00; }
 Then find them and their bounding box.
 Zero green means the property is inert on that widget, which is a finding in itself.
 Green in the wrong place names the real owner.
-This is what proved that `swt-selected-tab-fill` paints the strip below the tab row, and that `ToolItem { background-color }` never reaches the button on GTK3.
 
 Each call re-applies the theme first, so snippets replace each other rather than piling up, and `reset: true` puts the IDE back.
 
@@ -65,7 +63,6 @@ It is also the cheapest way to see what a bundle's own dark stylesheet covers an
 
 Compute the WCAG ratio against the background that was measured, not the one that was intended.
 WCAG AA wants 4.5:1 for normal text and 3:1 for large text.
-This is what turned "is the header colour wanted" into an answer: it was wanted, and it failed AA in four of the six palettes.
 
 Compute it for every palette before changing a shared rule.
 Several tokens read well in one theme and fail in another, and `ACCENT_2` in particular is a dark blue in VS Code Dark and unusable as a foreground.
@@ -94,6 +91,9 @@ The p2 director does the same check without an IDE, `-verifyOnly` against the bu
 Order between a base sheet and a contributed sheet is extension registry order, not declaration order.
 An override in a legacy or modern sheet therefore needs higher specificity or `!important`; "later wins" is not available.
 
+Every base sheet imports the platform's `e4-dark_*.css` or `e4_default_*.css` first, and those carry selectors more specific than ours.
+A rule in `structure.css` that repeats a value a broader rule already sets is often there to outrank one of them, so check the platform sheets of `org.eclipse.ui.themes` (including `dark/` and `light/`) before removing it as a duplicate.
+
 ### Why the build has two targets and two repositories
 
 One p2 resolution holds one version of css.core, because the bundle is a singleton, and the two variants need one version each.
@@ -108,10 +108,10 @@ The main repository has xz index files switched off because the mirror step woul
 
 A bundle ships its dark values in a stylesheet bound with `themeid refid="org.eclipse.e4.ui.css.theme.e4_dark"`.
 Our themes declare their own ids and do not inherit from it, so they keep the light defaults.
-Ant, PDE, Compare, the generic editor, EGit, Mylyn and the e4 model editor were all found this way, and the fix is the same each time: repeat the preference block in each theme's own `*_preferences.css`.
+The fix is to repeat the preference block in each theme's own `*_preferences.css`.
 
 Two variants are worse than that.
-A stylesheet contributed with no `themeid` at all applies everywhere and actively overwrites the theme, which is what `org.eclipse.e4.tools.emf.ui/css/default.css` did with three hard `#fff` areas.
+A stylesheet contributed with no `themeid` at all applies everywhere and actively overwrites the theme.
 Colours that live in Java constants or in a bundle's own resource file reach no preference and no CSS, and no theme can override them; those need a change in the owning bundle.
 
 To find the next one, look for `<themeid` in the installed plugins:
@@ -126,6 +126,7 @@ done
 ## Before pushing
 
 Run `./releng/check-tokens.sh` and `mvn clean verify`.
+The script checks the token contract, that syntax Batik rejects appears only in the modern bundle, that every stylesheet is loaded, and that all themes' preference and JDT sheets set the same keys; a key only some themes set on purpose goes into its `optional_keys` list.
 Then install into the running IDE and restart, because a stylesheet that parses is not a stylesheet that renders:
 `eclipse_add_repository` with `refresh`, `eclipse_update`, `eclipse_restart`.
 Measure again afterwards.
