@@ -81,9 +81,7 @@ jobs:
           rm -rf "gh-pages/releases/$version"
           mkdir -p "gh-pages/releases/$version"
           cp -r update-site/com.vogella.eclipse.themes.repository/target/repository/. "gh-pages/releases/$version"
-          # the site carries this build only; everything else is dropped.
-          # --only rather than --keep 1, because a qualifier-named directory does
-          # not sort above a plainly named one: 1.0.1 beats 1.0.0.202608280419.
+          # the site carries this build only; everything else is dropped
           releng/update-composite-site.sh --only "$version" gh-pages
 
       - name: Publish the update site
@@ -108,5 +106,6 @@ jobs:
           # the built name carries the Maven -SNAPSHOT suffix, which is misleading on a release
           archive="com.vogella.eclipse.themes.repository-${GITHUB_REF_NAME#v}.zip"
           cp "$built" "$archive"
-          gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes || true
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 \
+            || gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
           gh release upload "$GITHUB_REF_NAME" "$archive" --clobber

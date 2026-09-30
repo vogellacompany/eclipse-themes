@@ -1,11 +1,12 @@
 name: build
 
+# a push to main is built by the release workflow
 on:
-  push:
-    branches:
-      - main
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

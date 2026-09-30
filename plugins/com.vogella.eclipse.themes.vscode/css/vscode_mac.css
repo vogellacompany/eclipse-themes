@@ -18,7 +18,7 @@
  * 4. preference based recoloring
  * 5. Java syntax colors (Dark+ mapping)
  * 6. tab styling overrides, last because they refine structure.css for the
- *    VS Code Dark Modern tab look (top accent keyline on active tabs)
+ *    VS Code Dark Modern tab look (top keyline on every selected tab)
  */
 
 @import url("platform:/plugin/org.eclipse.ui.themes/css/e4-dark_mac.css");

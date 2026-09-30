@@ -23,7 +23,7 @@
         <artifactId>target-platform-configuration</artifactId>
         <configuration>
           <target>
-            <file>${maven.multiModuleProjectDirectory}/target-platform/com.vogella.eclipse.themes.target/com.vogella.eclipse.themes.target.modern.target</file>
+            <file>${modern.target}</file>
           </target>
         </configuration>
       </plugin>

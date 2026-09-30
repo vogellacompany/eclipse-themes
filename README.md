@@ -91,19 +91,16 @@ The orange row selection in the tree and the outline is the desktop accent color
 mvn clean verify
 ```
 
-Maven has to run on JDK 25 or newer, because the target platform is resolved against the
-`JavaSE-25` execution environment configured in `pom.xml`.
+Maven has to run on JDK 25 or newer, because the target platform is resolved against the `JavaSE-25` execution environment configured in `pom.xml`.
 The build is pomless Tycho (5.0.4) against the Eclipse 2026-06 release train target platform, with the modern CSS variant bundle and the update site resolved against 2026-09 (see [AGENTS.md](AGENTS.md)).
-The resulting p2 repository lands in
-`update-site/com.vogella.eclipse.themes.repository/target/repository/`.
+The resulting p2 repository lands in `update-site/com.vogella.eclipse.themes.repository/target/repository/`.
 
 Pushing to `main` runs that same build and publishes the result to the hosted update site, on the `gh-pages` branch.
 The site carries one build at a time: `releng/update-composite-site.sh` writes the p2 composite metadata that points the root URL at it, and drops what came before.
 A tag of the form `v*` additionally attaches the repository archive to a GitHub release.
 
-The published artifacts are PGP signed with the vogella release key, held in the `MAVEN_GPG_KEY`
-and `MAVEN_GPG_PASSPHRASE` organization secrets. Signing is off in a plain `mvn clean verify`; to
-exercise it locally, point Tycho at an exported secret key:
+The published artifacts are PGP signed with the vogella release key, held in the `MAVEN_GPG_KEY` and `MAVEN_GPG_PASSPHRASE` organization secrets.
+Signing is off in a plain `mvn clean verify`; to exercise it locally, point Tycho at an exported secret key:
 
 ```
 mvn clean verify -Dgpg.skip=false -Dtycho.pgp.signer.bc.secretKeys=/path/to/signing-key.asc
@@ -113,25 +110,18 @@ with the passphrase in `MAVEN_GPG_PASSPHRASE`.
 
 ## Adding a theme
 
-Copy an existing bundle under `plugins/` and replace the old bundle symbolic name everywhere
-in the copy.
-Copy a dark theme for a dark one and `com.vogella.eclipse.themes.onelight` for a light one:
-the two differ in which platform stylesheet the `*_gtk.css`, `*_win.css` and `*_mac.css` files
-import, and in whether `javadocElementsStyling.darkModeDefaultColors` is `true` or `false`.
-That last part is the step that is easy to miss: the base stylesheets import the palette and
-the preference sheets through `platform:/plugin/<bundle>/css/...` URIs, and every
-`ColorDefinition` label is a `platform:/plugin/<bundle>?message=...` URI.
-A copy that keeps the old name silently renders with the old theme's palette when that bundle
-is installed, and renders black when it is not.
+Copy an existing bundle under `plugins/` and replace the old bundle symbolic name everywhere in the copy.
+Copy a dark theme for a dark one and `com.vogella.eclipse.themes.onelight` for a light one: the two differ in which platform stylesheet the `*_gtk.css`, `*_win.css` and `*_mac.css` files import, and in whether `javadocElementsStyling.darkModeDefaultColors` is `true` or `false`.
+Replacing the bundle name is the step that is easy to miss: the base stylesheets import the palette and the preference sheets through `platform:/plugin/<bundle>/css/...` URIs, and every `ColorDefinition` label is a `platform:/plugin/<bundle>?message=...` URI.
+A copy that keeps the old name silently renders with the old theme's palette when that bundle is installed, and renders black when it is not.
 
-Then rename the theme id and the `%theme.*` key pair in `plugin.xml` and `plugin.properties`.
+Then rename the theme id and the `%theme.*` key pair in `plugin.xml` and `plugin.properties`, and the `pluginName` there.
 Set `isDarkTheme` on every `<theme>` element, which the platform reads from 2026-12 on.
 Older releases still test whether the theme id contains `dark`, so a dark theme keeps `dark` in its id as well and a light theme must not have it.
-Then rename the `.project` name and `Automatic-Module-Name`, replace the palette values and the
-preference stylesheets (`*_preferences.css` and `*_jdt.css`, plus `vscode_tabs.css` if you
-copied the VS Code theme), and add the plugin to `features/com.vogella.eclipse.themes.feature/feature.xml`.
-Run `./releng/check-tokens.sh` afterwards, it verifies the token contract for every palette it
-finds.
+Then rename the `.project` name and `Automatic-Module-Name`, and replace the palette values and the preference stylesheets (`*_preferences.css` and `*_jdt.css`, plus `vscode_tabs.css` or `neon_tabs.css` if you copied one of those themes).
+Add a `css/<theme>_legacy.css` to `plugins/com.vogella.eclipse.themes.legacy` and a `css/<theme>_modern.css` to `plugins/com.vogella.eclipse.themes.modern`, each with a `<stylesheet>` entry for the new theme id in that bundle's `plugin.xml`.
+Add the plugin to `features/com.vogella.eclipse.themes.feature/feature.xml` and the theme name to its description, and to the theme list in `releng/update-composite-site.sh`.
+Run `./releng/check-tokens.sh` afterwards: it verifies the token contract for every palette it finds, that every stylesheet is loaded, and that the new preference sheets set the same keys as the others.
 No pom changes are needed, the pomless aggregator picks up new directories automatically.
 
 ## License

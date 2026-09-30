@@ -18,12 +18,10 @@
  * Dark, which is why the rule is not shared.
  *
  * Imported after structure.css; same specificity, so the later declaration wins.
+ * The cyan of the active stack comes from structure.css, whose '.MPartStack.active'
+ * rule outranks this one.
  */
 
 .MPartStack {
 	swt-selected-tab-highlight: '#com-vogella-themes-ACCENT_2';
-}
-
-.MPartStack.active {
-	swt-selected-tab-highlight: '#com-vogella-themes-ACCENT';
 }
