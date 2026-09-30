@@ -81,6 +81,7 @@ jobs:
           rm -rf "gh-pages/releases/$version"
           mkdir -p "gh-pages/releases/$version"
           cp -r update-site/com.vogella.eclipse.themes.repository/target/repository/. "gh-pages/releases/$version"
+          cp docs/images/logo.png gh-pages/
           # the site carries this build only; everything else is dropped
           releng/update-composite-site.sh --only "$version" gh-pages
 
