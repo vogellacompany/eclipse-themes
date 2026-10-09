@@ -24,10 +24,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      # Full history, the build qualifier is the time of the last commit that touched each module
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: actions/setup-java@v4
         with:
@@ -55,7 +52,8 @@ jobs:
         env:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         run: |
-          mvn -B clean verify -Dgpg.skip=false \
+          # an explicit qualifier, the build otherwise stamps 198002010000 on the runner
+          mvn -B clean verify -Dgpg.skip=false -DforceContextQualifier=$(date -u +%Y%m%d%H%M) \
             -Dtycho.pgp.signer.bc.secretKeys=$RUNNER_TEMP/signing-key.asc
 
       # The directory is named after what was actually built, qualifier included,
