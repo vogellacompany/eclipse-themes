@@ -24,7 +24,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      # Full history, the build qualifier is the time of the last commit that touched each module
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-java@v4
         with:
