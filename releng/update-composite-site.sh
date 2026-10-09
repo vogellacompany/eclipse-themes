@@ -2,7 +2,8 @@
 #
 # Regenerates the p2 composite metadata at the root of the update site from the
 # directories present under <site>/releases, optionally dropping every release
-# but one first.
+# but one first. A build of the icon sets under <site>/icons, published by their
+# own repository, is listed as a child as well.
 #
 # Usage: releng/update-composite-site.sh [--only <version>] <site-directory>
 
@@ -64,6 +65,13 @@ if [ -n "$only" ]; then
 	versions=("$only")
 fi
 
+mapfile -t icons < <(find "$site/icons" -mindepth 1 -maxdepth 1 -type d -printf 'icons/%f\n' 2>/dev/null | sort -V)
+children=()
+for version in "${versions[@]}"; do
+	children+=("releases/$version")
+done
+children+=("${icons[@]}")
+
 # p2 expects milliseconds; %3N is not honoured by every coreutils implementation
 timestamp=$(( $(date +%s) * 1000 ))
 
@@ -77,9 +85,9 @@ write_composite() {
 		printf "    <property name='p2.timestamp' value='%s'/>\n" "$timestamp"
 		printf "    <property name='p2.atomic.composite.loading' value='true'/>\n"
 		printf "  </properties>\n"
-		printf "  <children size='%s'>\n" "${#versions[@]}"
-		for version in "${versions[@]}"; do
-			printf "    <child location='releases/%s'/>\n" "$version"
+		printf "  <children size='%s'>\n" "${#children[@]}"
+		for child in "${children[@]}"; do
+			printf "    <child location='%s'/>\n" "$child"
 		done
 		printf "  </children>\n"
 		printf "</repository>\n"
@@ -222,7 +230,7 @@ latest=${versions[${#versions[@]}-1]}
 <ol>
   <li>In Eclipse, open <em>Help &gt; Install New Software...</em></li>
   <li>Paste the update site URL into <em>Work with</em> and press Enter.</li>
-  <li>Select <em>vogella Eclipse Themes</em>, finish the wizard and restart.</li>
+  <li>Select <em>vogella Eclipse Themes</em>$([ ${#icons[@]} -gt 0 ] && printf ', and optionally <em>vogella Theme Icon Sets</em> for icons that follow the theme (Eclipse 2026-03 or later)'), finish the wizard and restart.</li>
   <li>Pick a theme in <em>Window &gt; Preferences &gt; General &gt; Appearance</em>.</li>
 </ol>
 

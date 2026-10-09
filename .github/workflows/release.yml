@@ -96,6 +96,8 @@ jobs:
             exit 0
           fi
           git commit -m "Publish ${{ steps.version.outputs.value }}"
+          # the icon sets repository publishes to the same branch
+          git pull --rebase
           git push
 
       - name: Attach the repository archive to the release
