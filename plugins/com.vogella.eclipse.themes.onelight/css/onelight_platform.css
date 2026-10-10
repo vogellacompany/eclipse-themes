@@ -1,0 +1,142 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* One Light counters to the platform light stylesheets.
+ *
+ * e4_default_gtk.css, _win.css and _mac.css pin editor composites, view surfaces
+ * and the page tabs of multi page editors with ids, '.View' chains and literals
+ * that outrank structure.css. The dark themes never import them, so these rules
+ * live here and not in the shared file. Imported right after structure.css.
+ */
+
+/* ############################## Dialogs ############################## */
+
+/* Dialogs sit one step above the chrome, so their checkboxes, radios and
+ * separators keep the contrast GTK draws them with on a light surface.
+ * Same selectors as the global surface rule, which this repeats. */
+Shell,
+Composite, ScrolledComposite, ExpandableComposite, Canvas, TabFolder, CLabel, Label,
+CoolBar, Sash, Group, Link, FilteredTree,
+Splitter, ScrolledPageContent, ViewForm,
+ProgressMonitorPart, MessageLine,
+Button,
+Composite > *,
+Composite > * > * {
+	background-color: '#com-vogella-themes-BG_PART';
+}
+
+/* The surface rule above ties these at the same specificity, so they are repeated
+ * after it to keep inputs raised, as structure.css orders them. */
+Combo,
+List,
+Text,
+Spinner,
+CCombo {
+	background-color: '#com-vogella-themes-BG_RAISED';
+}
+
+Text[style~='SWT.SEARCH'],
+Text[style~='SWT.READ_ONLY'],
+Text[style~='SWT.READ_ONLY'][style~='SWT.WRAP'][style~='SWT.BORDER'] {
+	background-color: '#com-vogella-themes-BG_RAISED';
+}
+
+Text[style~='SWT.READ_ONLY'][style~='SWT.WRAP'] {
+	background-color: inherit;
+}
+
+/* A list in a dialog is a field, as in the platform light theme. */
+Shell Tree, Shell Table, Shell List {
+	background-color: '#com-vogella-themes-BG_RAISED';
+}
+
+/* The workbench chrome keeps BG_WINDOW: the trim's tool controls are reached by
+ * the surface rule above and named by nothing else. */
+.MTrimBar Composite,
+.MTrimBar Canvas,
+.MTrimBar Label,
+.MTrimBar CLabel,
+.MTrimBar ImageBasedFrame,
+.MTrimBar StatusLine,
+.MTrimBar HeapStatus,
+.MTrimBar ToolItem,
+.MToolControl {
+	background-color: '#com-vogella-themes-BG_WINDOW';
+}
+
+/* ############################## Editors ############################## */
+
+/* The platform paints every composite of an editor white by id, behind the
+ * BG_PART labels, sections and forms, which left a patch around each label. */
+#org-eclipse-e4-ui-compatibility-editor Composite {
+	background-color: '#com-vogella-themes-BG_PART';
+}
+
+/* The platform sets the 'background' shorthand on both, which wins over the
+ * background-color of structure.css. */
+Form,
+FormHeading {
+	background: '#com-vogella-themes-BG_PART';
+}
+
+/* A pure white outer keyline is what CTabRendering reads as an inactive folder,
+ * and it then draws the unselected tabs at half alpha: the page tabs of a multi
+ * page editor fell to 3.8:1 even in black. */
+.MPart CTabFolder {
+	swt-outer-keyline-color: '#com-vogella-themes-BORDER';
+}
+
+/* Lists in a form editor, the extensions tree of the manifest editor among them,
+ * read as fields like the text fields beside them. */
+.Editor Composite Tree,
+.Editor Composite Table,
+.Editor Composite List {
+	background-color: '#com-vogella-themes-BG_RAISED';
+}
+
+#org-eclipse-ui-editorss CTabItem {
+	color: '#com-vogella-themes-FG';
+	background-color: '#com-vogella-themes-BG_WINDOW';
+}
+
+/* ############################## Views ############################## */
+
+/* The platform routes these through SECONDARY_BACKGROUND, which is BG_WINDOW in
+ * this palette, at a specificity above the '.MPart' rules: view trees, empty
+ * views and labels came out a shade darker than the view around them. */
+.View Composite,
+.View Composite Tree,
+.View Composite Label,
+.View Group,
+.View Group Label,
+.View Section,
+.View BusyIndicator,
+.View Text[style~='SWT.READ_ONLY'],
+.View SashForm,
+.View StyledText[style~='SWT.READ_ONLY'],
+.View Link,
+.View FormText,
+.View Canvas,
+.View FigureCanvas,
+.View TitleRegion,
+.MPartStack.active .View TitleRegion {
+	background-color: '#com-vogella-themes-BG_PART';
+}
+
+.View Hyperlink {
+	background-color: '#com-vogella-themes-BG_PART';
+	color: '#com-vogella-themes-LINK';
+}
+
+.View Composite Label[style~='SWT.SEPARATOR'],
+.View Group Label[style~='SWT.SEPARATOR'] {
+	background-color: '#com-vogella-themes-BORDER';
+}

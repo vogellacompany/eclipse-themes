@@ -490,6 +490,14 @@ FormHeading ToolBar {
 	color: '#com-vogella-themes-FG';
 }
 
+/* The bare 'ToolItem' rule paints BG_WINDOW, which shows as a chiclet behind
+ * every button of a form heading or section toolbar. */
+FormHeading ToolItem,
+Section ToolBar,
+Section ToolItem {
+	background-color: '#com-vogella-themes-BG_PART';
+}
+
 ScrolledFormText,
 FormText {
 	background-color: '#com-vogella-themes-BG_PART';
@@ -544,14 +552,28 @@ ExpandableComposite {
 
 /* ############################## Links ############################## */
 
+/* The descendant forms tie the global and '.MPart' surface wildcards, which
+ * otherwise paint a form hyperlink such as PDE's 'Activator:' in FG. */
 Hyperlink,
-ImageHyperlink {
+ImageHyperlink,
+Composite Hyperlink,
+Composite ImageHyperlink,
+.MPart Composite Hyperlink,
+.MPart Composite ImageHyperlink {
 	background-color: inherit;
 	color: '#com-vogella-themes-LINK';
 }
 
 Link {
 	swt-link-foreground-color: '#com-vogella-themes-LINK';
+}
+
+/* ############################## Separators ############################## */
+
+/* A separator Label paints its whole bounds in its background, so the surface
+ * rules made the line vanish, the one under a dialog's title area among them. */
+Label[style~='SWT.SEPARATOR'] {
+	background-color: '#com-vogella-themes-BORDER';
 }
 
 /* ############################## Drag feedback ############################## */

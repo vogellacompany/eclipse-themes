@@ -14,7 +14,8 @@
  * Import order is load bearing:
  * 1. platform light stylesheet, so every later import overrides it
  * 2. one light palette, registering the shared tokens with the One Light values
- * 3. shared structural rules, resolved against the palette values
+ * 3. shared structural rules, resolved against the palette values, then the
+ *    counters to the platform light rules that outrank them
  * 4. preference based recoloring
  * 5. Java syntax colors
  */
@@ -24,6 +25,7 @@
 @import url("platform:/plugin/com.vogella.eclipse.themes.common/css/structure.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.common/css/egit.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.common/css/mylyn.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_platform.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_preferences.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_jdt.css");
 
