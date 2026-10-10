@@ -57,6 +57,8 @@ IEclipsePreferences#org-eclipse-ui-editors:org-eclipse-ui-themes {
 
 IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-ui-themes {
 	preferences:
+		/* A vertical perspective switcher on the left, like the VS Code activity bar */
+		'perspectiveSwitcherSide=left'
 		'ACTIVE_HYPERLINK_COLOR=77,170,252'
 		'CONFLICTING_COLOR=241,76,76'
 		'CONTENT_ASSIST_BACKGROUND_COLOR=37,37,38'
