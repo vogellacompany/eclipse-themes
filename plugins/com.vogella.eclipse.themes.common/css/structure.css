@@ -56,6 +56,18 @@ Text[style~='SWT.READ_ONLY'] {
 	color: '#com-vogella-themes-FG_MUTED';
 }
 
+/* Wrapping read-only text without a border is prose on its parent, such as the message
+ * line of a wizard or TitleAreaDialog, not a field; the bordered rule restores fields. */
+Text[style~='SWT.READ_ONLY'][style~='SWT.WRAP'] {
+	background-color: inherit;
+	color: '#com-vogella-themes-FG';
+}
+
+Text[style~='SWT.READ_ONLY'][style~='SWT.WRAP'][style~='SWT.BORDER'] {
+	background-color: '#com-vogella-themes-BG_RAISED';
+	color: '#com-vogella-themes-FG_MUTED';
+}
+
 Button.disabled {
 	color: '#com-vogella-themes-FG_MUTED';
 }
