@@ -178,3 +178,11 @@ ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_TEXT_COLOR { color: 
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR { color: #E2EAFF; }
 
 ColorDefinition#org-eclipse-ui-workbench-LINK_COLOR { color: #00E5FF; }
+
+/* The drag handle of every trim toolbar, in FG over BG_WINDOW at 70 percent. The platform's
+ * beige handle falls to about 3:1 on the dark chromes. Read when a toolbar is framed, so a
+ * change shows after a restart. */
+.MTrimBar .Draggable {
+	handle-image: url('platform:/plugin/com.vogella.eclipse.themes.neon/images/drag-handle.svg');
+	handle-image-rotated: url('platform:/plugin/com.vogella.eclipse.themes.neon/images/drag-handle-rotated.svg');
+}
