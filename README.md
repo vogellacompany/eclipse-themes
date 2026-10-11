@@ -15,6 +15,7 @@ https://vogellacompany.github.io/eclipse-themes/
 
 One feature installs all seven themes.
 Then switch under *Preferences > General > Appearance* to the installed theme.
+The same site offers *vogella Theme Icon Sets*, which replaces the Eclipse icons with a set matching the active theme after a restart.
 
 The site carries the newest build and nothing else, published from `main` by the [Release workflow](.github/workflows/release.yml).
 Older versions are not supported: the previous build is dropped when a new one is published, so update rather than pin.
@@ -82,8 +83,7 @@ The VS Code Dark Modern look, including its tab styling and Dark+ syntax colors.
 
 ![VS Code Dark](docs/images/vscode-dark.png)
 
-The seven screenshots are the same workspace, the same file and the same window, each captured on GTK at 200% scaling right after a restart into its theme, so they differ only in the theme.
-The orange row selection in the tree and the outline is the desktop accent color rather than the theme: GTK owns tree selection and no stylesheet can set it, see [styling-limits.md](docs/styling-limits.md).
+The screenshots are the same workspace, the same file and the same window on macOS, each captured right after a restart into its theme with the *vogella Theme Icon Sets* installed, so every theme shows the icon set it selects.
 
 ## Building
 
