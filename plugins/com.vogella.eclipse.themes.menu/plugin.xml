@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <!-- Same ids as the platform's own menu from org.eclipse.ui.ide 3.24, so contributions can anchor to it on every release -->
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:org.eclipse.ui.appearance?after=org.eclipse.ui.window.minimizePart">
+         <separator name="org.eclipse.ui.window.appearance.themesSeparator" visible="true"/>
+         <menu id="org.eclipse.ui.appearance.themes" label="%menu.themes">
+            <dynamic id="org.eclipse.ui.menus.dynamicThemeMenu"
+                     class="com.vogella.eclipse.themes.menu.ThemeContributionItem"/>
+         </menu>
+      </menuContribution>
+   </extension>
+</plugin>

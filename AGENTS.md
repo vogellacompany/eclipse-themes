@@ -104,6 +104,13 @@ The same singleton rule drops one variant from a repository: the main update sit
 The mirror logs `Problems resolving provisioning plan` for the legacy bundle's css.core range on every build; that is expected, the range is unsatisfiable in the modern target and the artifacts are mirrored anyway.
 The main repository has xz index files switched off because the mirror step would leave them stale, and stale xz indexes are what p2 reads first.
 
+## The Themes menu for releases before 2026-12
+
+`plugins/com.vogella.eclipse.themes.menu` adds Window > Appearance > Themes, which the platform ships itself from `org.eclipse.ui.ide` 3.24 (2026-12) on.
+It is gated the same way as the CSS variants: `Require-Bundle: org.eclipse.ui.ide;bundle-version="[3.0.0,3.24.0)"`, in `com.vogella.eclipse.themes.menu.feature`, included with `optional="true"`, so it never shows a second Themes menu next to the platform's.
+It reuses the platform's menu id `org.eclipse.ui.appearance.themes` and separator name, so other contributions can anchor to one id on every release.
+The bundle builds only while both targets are older than 2026-12; when a target moves to 2026-12, give this bundle and `com.vogella.eclipse.themes.menu.feature` a `pom.xml` pinning them to an older train, as the modern bundle and feature do.
+
 ## The recurring platform bug
 
 A bundle ships its dark values in a stylesheet bound with `themeid refid="org.eclipse.e4.ui.css.theme.e4_dark"`.

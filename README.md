@@ -3,7 +3,8 @@
 # vogella Eclipse Themes
 
 Additional themes for the Eclipse IDE, shipped as an installable p2 update site.
-The themes are pure resource plugins: CSS and preference definitions only, no Java code.
+The themes are pure resource plugins: CSS and preference definitions only.
+The one bundle with Java code is `com.vogella.eclipse.themes.menu`, which adds the theme menu for releases before 2026-12.
 
 ## Installing
 
@@ -14,7 +15,8 @@ https://vogellacompany.github.io/eclipse-themes/
 ```
 
 One feature installs all seven themes.
-Then switch under *Preferences > General > Appearance* to the installed theme.
+Then switch to the installed theme under *Window > Appearance > Themes* or *Preferences > General > Appearance*.
+Eclipse 2026-12 and later bring that menu themselves; on older releases the theme feature adds it.
 The same site offers *vogella Theme Icon Sets*, which replaces the Eclipse icons with a set matching the active theme after a restart.
 
 The site carries the newest build and nothing else, published from `main` by the [Release workflow](.github/workflows/release.yml).

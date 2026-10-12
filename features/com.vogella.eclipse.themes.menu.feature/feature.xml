@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vogella.eclipse.themes.menu.feature"
+      label="vogella Themes Menu for Eclipse before 2026-12"
+      version="2.0.0.qualifier"
+      provider-name="vogella GmbH">
+
+   <description>
+      Adds Window &gt; Appearance &gt; Themes to Eclipse releases before 2026-12, which brings its own.
+      Installs only where that menu is missing.
+   </description>
+
+   <copyright>
+      Copyright (c) 2026 vogella GmbH and others.
+   </copyright>
+
+   <license url="https://www.eclipse.org/legal/epl-2.0/">
+      Eclipse Public License 2.0
+   </license>
+
+   <plugin id="com.vogella.eclipse.themes.menu" download-size="0" install-size="0" version="0.0.0"/>
+
+</feature>
