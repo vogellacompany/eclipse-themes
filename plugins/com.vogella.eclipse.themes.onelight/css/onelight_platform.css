@@ -58,6 +58,14 @@ Shell Tree, Shell Table, Shell List {
 	background-color: '#com-vogella-themes-BG_RAISED';
 }
 
+/* 'Composite > *' above ties the CTabItem rule of structure.css, and a CTabItem
+ * background is the folder background SWT hands the view toolbar and min/max bar,
+ * which then sat BG_PART around BG_WINDOW buttons. */
+CTabItem,
+CTabItem CLabel {
+	background-color: '#com-vogella-themes-BG_WINDOW';
+}
+
 /* The workbench chrome keeps BG_WINDOW: the trim's tool controls are reached by
  * the surface rule above and named by nothing else. */
 .MTrimBar Composite,
