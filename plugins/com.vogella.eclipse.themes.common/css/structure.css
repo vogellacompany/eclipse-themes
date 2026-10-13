@@ -189,6 +189,9 @@ DrillDownComposite {
 
 .MPartStack.active {
 	swt-selected-tab-highlight: '#com-vogella-themes-ACCENT';
+	/* Repeated: the platform light tab style sets true here, which outranks .MPartStack
+	 * and filled the active stack's tab row behind the min/max bar with BG_PART. */
+	swt-draw-custom-tab-content-background: false;
 }
 
 /* The page tabs of a multi page editor, the PDE manifest editor and the Mylyn task
