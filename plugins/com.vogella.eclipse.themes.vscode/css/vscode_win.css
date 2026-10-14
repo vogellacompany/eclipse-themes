@@ -28,4 +28,5 @@
 @import url("platform:/plugin/com.vogella.eclipse.themes.common/css/mylyn.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_preferences.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_jdt.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_cdt.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_tabs.css");

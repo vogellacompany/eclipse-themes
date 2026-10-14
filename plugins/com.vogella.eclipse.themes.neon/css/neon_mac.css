@@ -28,6 +28,7 @@
 @import url("platform:/plugin/com.vogella.eclipse.themes.neon/css/neon_tabs.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.neon/css/neon_preferences.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.neon/css/neon_jdt.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.neon/css/neon_cdt.css");
 
 /* e4-dark_mac.css unsets this so cocoa keeps drawing buttons natively;
  * structure.css re-imposes a background, so restore the unset last. */

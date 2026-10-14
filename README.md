@@ -120,7 +120,7 @@ A copy that keeps the old name silently renders with the old theme's palette whe
 Then rename the theme id and the `%theme.*` key pair in `plugin.xml` and `plugin.properties`, and the `pluginName` there.
 Set `isDarkTheme` on every `<theme>` element, which the platform reads from 2026-12 on.
 Older releases still test whether the theme id contains `dark`, so a dark theme keeps `dark` in its id as well and a light theme must not have it.
-Then rename the `.project` name and `Automatic-Module-Name`, and replace the palette values and the preference stylesheets (`*_preferences.css` and `*_jdt.css`, plus `vscode_tabs.css` or `neon_tabs.css` if you copied one of those themes).
+Then rename the `.project` name and `Automatic-Module-Name`, and replace the palette values and the preference stylesheets (`*_preferences.css`, `*_jdt.css` and `*_cdt.css`, plus `vscode_tabs.css` or `neon_tabs.css` if you copied one of those themes).
 Add a `css/<theme>_legacy.css` to `plugins/com.vogella.eclipse.themes.legacy` and a `css/<theme>_modern.css` to `plugins/com.vogella.eclipse.themes.modern`, each with a `<stylesheet>` entry for the new theme id in that bundle's `plugin.xml`.
 Add the plugin to `features/com.vogella.eclipse.themes.feature/feature.xml` and the theme name to its description, and to the theme list in `releng/update-composite-site.sh`.
 Run `./releng/check-tokens.sh` afterwards: it verifies the token contract for every palette it finds, that every stylesheet is loaded, and that the new preference sheets set the same keys as the others.

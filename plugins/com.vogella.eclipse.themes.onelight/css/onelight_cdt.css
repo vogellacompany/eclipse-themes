@@ -1,0 +1,114 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* One Light C/C++ syntax highlighting.
+ * The key list mirrors CDT's e4-dark_cdt.css, which only applies to the
+ * platform's Dark theme; the values reuse the roles of onelight_jdt.css, so C/C++
+ * reads like Java: keywords, strings, comments, types, functions, fields and
+ * variables share one colour each across both languages.
+ * CDT is intentionally not a dependency: writing into a preference node whose
+ * owner is not installed is harmless.
+ */
+
+/* ############################## CDT syntax highlighting ############################## */
+
+IEclipsePreferences#org-eclipse-cdt-ui:org-eclipse-cdt-ui {
+	preferences:
+		'asm_directive=166,38,164'
+		'asm_directive_bold=false'
+		'asm_label=56,58,66'
+		'asm_label_bold=false'
+		'c_braces=56,58,66'
+		'c_comment_task_tag=105,108,119'
+		'c_default=56,58,66'
+		'c_keyword=166,38,164'
+		'c_keyword_bold=false'
+		'c_multi_line_comment=160,161,167'
+		'c_numbers=152,104,1'
+		'c_operators=56,58,66'
+		'c_single_line_comment=160,161,167'
+		'c_string=80,161,79'
+		'c_type=166,38,164'
+		'c_type_bold=false'
+		'org.eclipse.cdt.internal.ui.text.doctools.multi=160,161,167'
+		'org.eclipse.cdt.internal.ui.text.doctools.recognizedTag=166,38,164'
+		'org.eclipse.cdt.internal.ui.text.doctools.single=160,161,167'
+		'pp_default=56,58,66'
+		'pp_directive=166,38,164'
+		'pp_directive_bold=false'
+		'pp_header=80,161,79'
+		'semanticHighlighting.class.color=193,132,1'
+		'semanticHighlighting.class.enabled=true'
+		'semanticHighlighting.class.bold=false'
+		'semanticHighlighting.enum.color=193,132,1'
+		'semanticHighlighting.enum.enabled=true'
+		'semanticHighlighting.enum.italic=false'
+		'semanticHighlighting.enumerator.color=152,104,1'
+		'semanticHighlighting.enumerator.enabled=true'
+		'semanticHighlighting.externalSDK.color=64,120,242'
+		'semanticHighlighting.externalSDK.enabled=true'
+		'semanticHighlighting.field.color=152,104,1'
+		'semanticHighlighting.field.enabled=true'
+		'semanticHighlighting.function.color=64,120,242'
+		'semanticHighlighting.function.enabled=true'
+		'semanticHighlighting.functionDeclaration.color=64,120,242'
+		'semanticHighlighting.functionDeclaration.enabled=true'
+		'semanticHighlighting.functionDeclaration.bold=false'
+		'semanticHighlighting.localVariable.color=56,58,66'
+		'semanticHighlighting.localVariable.enabled=true'
+		'semanticHighlighting.localVariableDeclaration.color=56,58,66'
+		'semanticHighlighting.localVariableDeclaration.enabled=true'
+		'semanticHighlighting.macroDefinition.color=152,104,1'
+		'semanticHighlighting.macroDefinition.enabled=true'
+		'semanticHighlighting.macroDefinition.bold=false'
+		'semanticHighlighting.method.color=64,120,242'
+		'semanticHighlighting.method.enabled=true'
+		'semanticHighlighting.methodDeclaration.color=64,120,242'
+		'semanticHighlighting.methodDeclaration.enabled=true'
+		'semanticHighlighting.methodDeclaration.bold=false'
+		'semanticHighlighting.namespace.color=193,132,1'
+		'semanticHighlighting.namespace.enabled=true'
+		'semanticHighlighting.parameterVariable.color=228,86,73'
+		'semanticHighlighting.parameterVariable.enabled=true'
+		'semanticHighlighting.staticField.color=152,104,1'
+		'semanticHighlighting.staticField.enabled=true'
+		'semanticHighlighting.staticMethod.color=64,120,242'
+		'semanticHighlighting.staticMethod.enabled=true'
+		'semanticHighlighting.typedef.color=193,132,1'
+		'semanticHighlighting.typedef.enabled=true'
+		'semanticHighlighting.typedef.bold=false'
+		'semanticHighlighting.typeParameter.color=193,132,1'
+		'semanticHighlighting.typeParameter.enabled=true'
+		'buildConsoleBackgroundColor=250,250,250'
+		'buildConsoleErrorStreamColor=228,86,73'
+		'buildConsoleInfoStreamColor=193,132,1'
+		'buildConsoleOutputStreamColor=56,58,66'
+		'buildConsoleProblemBackgroundColor=243,201,197'
+		'buildConsoleProblemHighlightedColor=228,86,73'
+		'buildConsoleProblemInfoBackgroundColor=233,215,175'
+		'buildConsoleProblemWarningBackgroundColor=221,206,175'
+		'inactiveCodeColor=238,238,239'
+}
+
+/* Pseudo attribute added to allow contributions without replacing this node, see Bug 466075 */
+IEclipsePreferences#org-eclipse-ui-editors:org-eclipse-cdt-ui {
+	preferences:
+		'org.eclipse.cdt.ui.occurrenceIndicationColor=229,234,253'
+		'org.eclipse.cdt.ui.overrideIndicatorColor=193,132,1'
+		'org.eclipse.cdt.ui.writeOccurrenceIndicationColor=213,221,255'
+}
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-cdt-ui {
+	preferences:
+		'org.eclipse.cdt.ui.ColoredLabels.writeaccess_highlight=228,86,73'
+		'org.eclipse.cdt.ui.outline.mark.dividercolor=202,202,204'
+		'org.eclipse.cdt.ui.outline.mark.textcolor=160,161,167'
+}

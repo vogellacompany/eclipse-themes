@@ -86,7 +86,7 @@ pref_keys() {
 # Keys only some themes set on purpose, as theme:node|key.
 optional_keys='neon:org-eclipse-ui-workbench|DECORATIONS_COLOR vscode:org-eclipse-ui-workbench|perspectiveSwitcherSide'
 
-for kind in preferences jdt; do
+for kind in preferences jdt cdt; do
 	sheets=(plugins/*/css/*_"$kind".css)
 	union=$(for sheet in "${sheets[@]}"; do pref_keys "$sheet"; done | sort -u)
 	for sheet in "${sheets[@]}"; do
