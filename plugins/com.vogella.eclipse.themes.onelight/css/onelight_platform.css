@@ -115,6 +115,15 @@ FormHeading {
 	background-color: '#com-vogella-themes-BG_WINDOW';
 }
 
+/* The onboarding content of an empty editor stack. The platform paints its container
+ * BG_WINDOW through '.MPartStack > Composite', while the surface rule above made the
+ * inner composite and its labels a BG_PART box. An editor part is no Composite element,
+ * so this does not reach editors. */
+.MPartStack.EditorStack > Composite > Composite,
+.MPartStack.EditorStack > Composite > Composite > Label {
+	background-color: '#com-vogella-themes-BG_WINDOW';
+}
+
 /* ############################## Views ############################## */
 
 /* The platform routes these through SECONDARY_BACKGROUND, which is BG_WINDOW in
