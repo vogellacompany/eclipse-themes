@@ -116,6 +116,8 @@ The bundle builds only while both targets are older than 2026-12; when a target 
 A bundle ships its dark values in a stylesheet bound with `themeid refid="org.eclipse.e4.ui.css.theme.e4_dark"`.
 Our themes declare their own ids and do not inherit from it, so they keep the light defaults.
 The fix is to repeat the preference block in each theme's own `*_preferences.css`.
+Language editors get a sheet of their own: `*_jdt.css` for Java and `*_cdt.css` for C/C++.
+Each `*_cdt.css` takes its colours by role from the same theme's `*_jdt.css` and `*_preferences.css`, so change both sheets together, or C/C++ drifts away from Java in that theme.
 
 Two variants are worse than that.
 A stylesheet contributed with no `themeid` at all applies everywhere and actively overwrites the theme.
