@@ -133,7 +133,7 @@ done
 ## Before pushing
 
 Run `./releng/check-tokens.sh` and `mvn clean verify`.
-The script checks the token contract, that syntax Batik rejects appears only in the modern bundle, that every stylesheet is loaded, and that all themes' preference and JDT sheets set the same keys; a key only some themes set on purpose goes into its `optional_keys` list.
+The script checks the token contract, that syntax Batik rejects appears only in the modern bundle, that every stylesheet is loaded, and that all themes' preference, JDT and CDT sheets set the same keys; a key only some themes set on purpose goes into its `optional_keys` list.
 Then install into the running IDE and restart, because a stylesheet that parses is not a stylesheet that renders:
 `eclipse_add_repository` with `refresh`, `eclipse_update`, `eclipse_restart`.
 Measure again afterwards.
