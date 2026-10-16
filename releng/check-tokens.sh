@@ -84,7 +84,7 @@ pref_keys() {
 }
 
 # Keys only some themes set on purpose, as theme:node|key.
-optional_keys='neon:org-eclipse-ui-workbench|DECORATIONS_COLOR vscode:org-eclipse-ui-workbench|perspectiveSwitcherSide'
+optional_keys='neon:org-eclipse-ui-workbench|DECORATIONS_COLOR'
 
 for kind in preferences jdt cdt; do
 	sheets=(plugins/*/css/*_"$kind".css)

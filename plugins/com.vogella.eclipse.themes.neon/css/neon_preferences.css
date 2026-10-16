@@ -57,6 +57,7 @@ IEclipsePreferences#org-eclipse-ui-editors:org-eclipse-ui-themes {
 
 IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-ui-themes {
 	preferences:
+		'perspectiveSwitcherSide=left'
 		'ACTIVE_HYPERLINK_COLOR=255,47,185'
 		'DECORATIONS_COLOR=140,155,201'
 		'CONFLICTING_COLOR=255,47,185'
