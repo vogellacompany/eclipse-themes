@@ -1,0 +1,8 @@
+# The icon sets are released on their own and the site keeps only their newest build, so the
+# requirement is an open range; a feature include would pin the build it was compiled against.
+# Optional, because they need Eclipse 2026-03 and the themes install on older releases too.
+requires.0.namespace = org.eclipse.equinox.p2.iu
+requires.0.name = com.vogella.eclipse.themes.icons.feature.feature.group
+requires.0.range = [2.0.0,)
+requires.0.optional = true
+requires.0.greedy = true

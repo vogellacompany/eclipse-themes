@@ -14,10 +14,10 @@ In Eclipse: *Help > Install New Software*, and add this update site:
 https://vogellacompany.github.io/eclipse-themes/
 ```
 
-One feature installs all seven themes.
+One feature installs all seven themes and *vogella Theme Icon Sets*, which replaces the Eclipse icons with a set matching the active theme after a restart.
+The icon sets need Eclipse 2026-03 or later; on older releases the themes install without them.
 Then switch to the installed theme under *Window > Appearance > Themes* or *Preferences > General > Appearance*.
 Eclipse 2026-12 and later bring that menu themselves; on older releases the theme feature adds it.
-The same site offers *vogella Theme Icon Sets*, which replaces the Eclipse icons with a set matching the active theme after a restart.
 
 The site carries the newest build and nothing else, published from `main` by the [Release workflow](.github/workflows/release.yml).
 Older versions are not supported: the previous build is dropped when a new one is published, so update rather than pin.
