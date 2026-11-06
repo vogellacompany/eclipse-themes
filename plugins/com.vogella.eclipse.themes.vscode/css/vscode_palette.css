@@ -12,9 +12,10 @@
 /* VS Code Dark palette.
  *
  * Colors are the published values of the VS Code Dark Modern default theme,
- * not inventions; the origin of each value is noted in PLAN.md.
+ * not inventions, except FG_MUTED, ACCENT and BORDER, lightened for legibility;
+ * the origin of each value is noted in PLAN.md.
  * Large surfaces use #181818 (chrome) and #1F1F1F (editor), accents are the
- * #0078D4 focus blue. No gradients anywhere.
+ * #0078D4 focus blue, lightened to #1784D8 to reach 4.5:1. No gradients anywhere.
  *
  * This file registers the shared '#com-vogella-themes-*' tokens and redefines the
  * platform's '#org-eclipse-ui-workbench-*' color definitions, so the imported
@@ -89,7 +90,7 @@ ColorDefinition#com-vogella-themes-BG_RAISED {
 	label: url('platform:/plugin/com.vogella.eclipse.themes.vscode?message=BG_RAISED');
 }
 ColorDefinition#com-vogella-themes-BORDER {
-	color: #2B2B2B;
+	color: #3A3A3A;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.vscode?message=BORDER');
 }
@@ -99,12 +100,12 @@ ColorDefinition#com-vogella-themes-FG {
 	label: url('platform:/plugin/com.vogella.eclipse.themes.vscode?message=FG');
 }
 ColorDefinition#com-vogella-themes-FG_MUTED {
-	color: #6E7681;
+	color: #818891;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.vscode?message=FG_MUTED');
 }
 ColorDefinition#com-vogella-themes-ACCENT {
-	color: #0078D4;
+	color: #1784D8;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.vscode?message=ACCENT');
 }
@@ -153,9 +154,9 @@ ColorDefinition#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_START { 
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_UNSELECTED_TABS_COLOR_END { color: #181818; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_START { color: #181818; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END { color: #181818; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #2B2B2B; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR { color: #2B2B2B; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR { color: #2B2B2B; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #3A3A3A; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR { color: #3A3A3A; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR { color: #3A3A3A; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR { color: #9D9D9D; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #9D9D9D; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR { color: #FFFFFF; }
@@ -164,8 +165,8 @@ ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_START { co
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_END { color: #181818; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_START { color: #1F1F1F; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END { color: #1F1F1F; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #2B2B2B; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR { color: #0078D4; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #3A3A3A; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR { color: #1784D8; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR { color: #1F1F1F; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR { color: #9D9D9D; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #9D9D9D; }

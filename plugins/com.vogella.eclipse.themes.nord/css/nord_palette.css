@@ -100,9 +100,9 @@ ColorDefinition#com-vogella-themes-FG {
 	label: url('platform:/plugin/com.vogella.eclipse.themes.nord?message=FG');
 }
 ColorDefinition#com-vogella-themes-FG_MUTED {
-	/* Brightened nord3 (#616E88), the comment shade of the nord.vim port;
-	 * plain nord3 is too dark for UI text. */
-	color: #616E88;
+	/* nord3 (#616E88), the comment shade of the nord.vim port, lightened to
+	 * reach 4.5:1 on BG_PART and BG_WINDOW. */
+	color: #A7AEBC;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.nord?message=FG_MUTED');
 }
@@ -127,12 +127,12 @@ ColorDefinition#com-vogella-themes-SELECTION_FG {
 	label: url('platform:/plugin/com.vogella.eclipse.themes.nord?message=SELECTION_FG');
 }
 ColorDefinition#com-vogella-themes-LINK {
-	color: #81A1C1;
+	color: #96B1CC;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.nord?message=LINK');
 }
 ColorDefinition#com-vogella-themes-ERROR {
-	color: #BF616A;
+	color: #D89FA4;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.nord?message=ERROR');
 }
@@ -159,8 +159,8 @@ ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END { color: #2E3440; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #3B4252; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR { color: #3B4252; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR { color: #3B4252; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR { color: #616E88; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #616E88; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR { color: #A7AEBC; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #A7AEBC; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR { color: #ECEFF4; }
 
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_START { color: #2E3440; }
@@ -170,8 +170,8 @@ ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END { color: #3B4252; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #3B4252; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR { color: #88C0D0; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR { color: #88C0D0; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR { color: #616E88; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #616E88; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR { color: #A7AEBC; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #A7AEBC; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_SELECTED_TEXT_COLOR { color: #ECEFF4; }
 
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START { color: #2E3440; }
@@ -179,7 +179,7 @@ ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_END { color: #2E3
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_TEXT_COLOR { color: #D8DEE9; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR { color: #D8DEE9; }
 
-ColorDefinition#org-eclipse-ui-workbench-LINK_COLOR { color: #81A1C1; }
+ColorDefinition#org-eclipse-ui-workbench-LINK_COLOR { color: #96B1CC; }
 
 /* The drag handle of every trim toolbar, in FG over BG_WINDOW at 70 percent. The platform's
  * beige handle falls to about 3:1 on the dark chromes. Read when a toolbar is framed, so a

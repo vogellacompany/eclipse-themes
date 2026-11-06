@@ -13,7 +13,7 @@
  *
  * The official Dracula colors: background #282A36 with #21222C as the darker
  * chrome shade, current line and selection #44475A, foreground #F8F8F2 and
- * the comment blue #6272A4 as the muted text. Purple #BD93F9 is the primary
+ * the comment blue #6272A4 lightened to #8390B7 as the muted text. Purple #BD93F9 is the primary
  * accent, pink #FF79C6 the secondary; cyan, green, orange, red and yellow
  * cover links and the semantic states.
  *
@@ -102,7 +102,7 @@ ColorDefinition#com-vogella-themes-FG {
 	label: url('platform:/plugin/com.vogella.eclipse.themes.dracula?message=FG');
 }
 ColorDefinition#com-vogella-themes-FG_MUTED {
-	color: #6272A4;
+	color: #8390B7;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.dracula?message=FG_MUTED');
 }
@@ -159,8 +159,8 @@ ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END { color: #21222C; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #282A36; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR { color: #282A36; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR { color: #282A36; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR { color: #6272A4; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #6272A4; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR { color: #8390B7; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #8390B7; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR { color: #F8F8F2; }
 
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_START { color: #21222C; }
@@ -170,8 +170,8 @@ ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END { color: #282A36; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #282A36; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR { color: #BD93F9; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR { color: #BD93F9; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR { color: #6272A4; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #6272A4; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR { color: #8390B7; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #8390B7; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_SELECTED_TEXT_COLOR { color: #F8F8F2; }
 
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START { color: #21222C; }

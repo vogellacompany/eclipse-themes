@@ -12,11 +12,11 @@
 /* One Light palette.
  *
  * The colors of Atom's one-light-syntax and one-light-ui packages (MIT).
- * Syntax background #FAFAFA, mono-1 #383A42 as foreground, mono-2 #696C77 as
+ * Syntax background #FAFAFA, mono-1 #383A42 as foreground, mono-2 darkened to #636670 as
  * the muted shade and mono-3 #A0A1A7 for comments. The UI packages derive
  * their surfaces from one base, hsl(230, 1%, 90%) = #E5E5E6, which is the
  * window chrome here, with its 6% lighter step #F4F4F5 for parts. Accents are
- * hue-2 blue #4078F2 and hue-3 purple #A626A4.
+ * hue-2 blue darkened to #3461C4 and hue-3 purple #A626A4.
  *
  * This file registers the shared '#com-vogella-themes-*' tokens and redefines the
  * platform's '#org-eclipse-ui-workbench-*' color definitions, so the imported
@@ -105,12 +105,12 @@ ColorDefinition#com-vogella-themes-FG {
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=FG');
 }
 ColorDefinition#com-vogella-themes-FG_MUTED {
-	color: #696C77;
+	color: #636670;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=FG_MUTED');
 }
 ColorDefinition#com-vogella-themes-ACCENT {
-	color: #4078F2;
+	color: #3461C4;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=ACCENT');
 }
@@ -133,22 +133,22 @@ ColorDefinition#com-vogella-themes-SELECTION_FG {
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=SELECTION_FG');
 }
 ColorDefinition#com-vogella-themes-LINK {
-	color: #4078F2;
+	color: #3461C4;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=LINK');
 }
 ColorDefinition#com-vogella-themes-ERROR {
-	color: #E45649;
+	color: #B04238;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=ERROR');
 }
 ColorDefinition#com-vogella-themes-WARNING {
-	color: #C18401;
+	color: #895E01;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=WARNING');
 }
 ColorDefinition#com-vogella-themes-SUCCESS {
-	color: #50A14F;
+	color: #397238;
 	category: '#org-eclipse-ui-presentation-default';
 	label: url('platform:/plugin/com.vogella.eclipse.themes.onelight?message=SUCCESS');
 }
@@ -167,8 +167,8 @@ ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_BG_END { color: #E5E5E6; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #D3D3D4; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_INNER_KEYLINE_COLOR { color: #D3D3D4; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_OUTLINE_COLOR { color: #D3D3D4; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR { color: #696C77; }
-ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #696C77; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_TEXT_COLOR { color: #636670; }
+ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #636670; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_TAB_SELECTED_TEXT_COLOR { color: #383A42; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_NOFOCUS_TAB_BG_START { color: #E5E5E6; }
 ColorDefinition#org-eclipse-ui-workbench-INACTIVE_NOFOCUS_TAB_BG_END { color: #E5E5E6; }
@@ -178,10 +178,10 @@ ColorDefinition#org-eclipse-ui-workbench-ACTIVE_UNSELECTED_TABS_COLOR_END { colo
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_START { color: #F4F4F5; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END { color: #F4F4F5; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTER_KEYLINE_COLOR { color: #D3D3D4; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR { color: #4078F2; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR { color: #4078F2; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR { color: #696C77; }
-ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #696C77; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_INNER_KEYLINE_COLOR { color: #3461C4; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_OUTLINE_COLOR { color: #3461C4; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR { color: #636670; }
+ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR { color: #636670; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_TAB_SELECTED_TEXT_COLOR { color: #383A42; }
 
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_START { color: #E5E5E6; }
@@ -189,7 +189,7 @@ ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_BG_END { color: #E5E
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_TEXT_COLOR { color: #383A42; }
 ColorDefinition#org-eclipse-ui-workbench-ACTIVE_NOFOCUS_TAB_SELECTED_TEXT_COLOR { color: #383A42; }
 
-ColorDefinition#org-eclipse-ui-workbench-LINK_COLOR { color: #4078F2; }
+ColorDefinition#org-eclipse-ui-workbench-LINK_COLOR { color: #3461C4; }
 
 /* The drag handle of every trim toolbar, in FG over BG_WINDOW at 70 percent. The platform's
  * beige handle falls to about 3:1 on the dark chromes. Read when a toolbar is framed, so a
