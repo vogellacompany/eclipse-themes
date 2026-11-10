@@ -118,7 +118,7 @@ The bundle builds only while both targets are older than 2026-12; when a target 
 A bundle ships its dark values in a stylesheet bound with `themeid refid="org.eclipse.e4.ui.css.theme.e4_dark"`.
 Our themes declare their own ids and do not inherit from it, so they keep the light defaults.
 The fix is to repeat the preference block in each theme's own `*_preferences.css`.
-Language editors get a sheet of their own: `*_jdt.css` for Java, `*_cdt.css` for C/C++ and Makefiles, `*_pydev.css` for PyDev and `*_gherkin.css` for the Cucumber editor.
+Language editors get a sheet of their own: `*_jdt.css` for Java, `*_cdt.css` for C/C++ and Makefiles, `*_pydev.css` for PyDev, `*_gherkin.css` for the Cucumber editor, `*_bash.css` for the Bash Editor and `*_php.css` for PDT.
 Each of the other sheets takes its colours by role from the same theme's `*_jdt.css` and `*_preferences.css`, so change them together, or the other languages drift away from Java in that theme.
 The Cucumber editor has no preference keys: it reads the theme's colour registry, so `*_gherkin.css` overrides its `ColorDefinition` ids.
 The engine styles only the preference nodes of bundles that contribute to `org.eclipse.e4.ui.css.swt.theme` or `org.eclipse.ui.themes`, so a block for any other bundle never runs.
@@ -147,7 +147,7 @@ It sits in `com.vogella.eclipse.themes.tm4e.feature`, included with `optional="t
 ## Before pushing
 
 Run `./releng/generate-tm4e-themes.py`, `./releng/check-tokens.sh` and `mvn clean verify`, and commit the regenerated TextMate themes.
-The script checks the token contract, that syntax Batik rejects appears only in the modern bundle, that every stylesheet is loaded, and that all themes' preference, JDT, CDT and PyDev sheets set the same keys; a key only some themes set on purpose goes into its `optional_keys` list.
+The script checks the token contract, that syntax Batik rejects appears only in the modern bundle, that every stylesheet is loaded, and that all themes' preference, JDT, CDT, PyDev, Bash and PHP sheets set the same keys; a key only some themes set on purpose goes into its `optional_keys` list.
 Then install into the running IDE and restart, because a stylesheet that parses is not a stylesheet that renders:
 `eclipse_add_repository` with `refresh`, `eclipse_update`, `eclipse_restart`.
 Measure again afterwards.

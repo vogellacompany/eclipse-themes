@@ -31,4 +31,6 @@
 @import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_cdt.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_pydev.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_gherkin.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_bash.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_php.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.vscode/css/vscode_tabs.css");

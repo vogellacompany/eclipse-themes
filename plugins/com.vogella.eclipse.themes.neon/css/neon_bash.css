@@ -1,0 +1,36 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* AI Neon shell syntax highlighting for the Bash Editor (de.jcup.basheditor).
+ * The key list mirrors the Bash Editor's css/dark.css, which only applies to the
+ * platform's Dark theme; the values reuse the roles of neon_jdt.css, so shell
+ * scripts read like Java.
+ * The Bash Editor is intentionally not a dependency: writing into a preference
+ * node whose owner is not installed is harmless.
+ */
+
+/* ############################## Bash Editor syntax highlighting ############################## */
+
+IEclipsePreferences#de-jcup-basheditor:de-jcup-basheditor {
+	preferences:
+		'colorNormalText=226,234,255'
+		'colorBashKeywords=255,47,185'
+		'colorSingleStrings=57,255,136'
+		'colorDoubleStrings=57,255,136'
+		'colorBackTickStrings=168,85,247'
+		'colorComments=76,90,122'
+		'colorIncludeKeywords=168,85,247'
+		'colorCommands=168,85,247'
+		'colorVariables=255,200,87'
+		'colorParameters=57,255,136'
+		'colorHereDocs=57,255,136'
+		'colorHereStrings=57,255,136'
+}

@@ -31,6 +31,8 @@
 @import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_cdt.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_pydev.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_gherkin.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_bash.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.onelight/css/onelight_php.css");
 
 /* structure.css gives Button a background, which stops cocoa from drawing it
  * natively; e4_default_mac.css leaves it alone, so restore the unset last. */

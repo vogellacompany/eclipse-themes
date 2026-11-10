@@ -29,6 +29,8 @@
 @import url("platform:/plugin/com.vogella.eclipse.themes.github/css/github_cdt.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.github/css/github_pydev.css");
 @import url("platform:/plugin/com.vogella.eclipse.themes.github/css/github_gherkin.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.github/css/github_bash.css");
+@import url("platform:/plugin/com.vogella.eclipse.themes.github/css/github_php.css");
 
 /* e4-dark_mac.css unsets this so cocoa keeps drawing buttons natively;
  * structure.css re-imposes a background, so restore the unset last. */

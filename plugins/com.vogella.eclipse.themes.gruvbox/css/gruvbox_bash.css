@@ -1,0 +1,36 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* Gruvbox Material shell syntax highlighting for the Bash Editor (de.jcup.basheditor).
+ * The key list mirrors the Bash Editor's css/dark.css, which only applies to the
+ * platform's Dark theme; the values reuse the roles of gruvbox_jdt.css, so shell
+ * scripts read like Java.
+ * The Bash Editor is intentionally not a dependency: writing into a preference
+ * node whose owner is not installed is harmless.
+ */
+
+/* ############################## Bash Editor syntax highlighting ############################## */
+
+IEclipsePreferences#de-jcup-basheditor:de-jcup-basheditor {
+	preferences:
+		'colorNormalText=212,190,152'
+		'colorBashKeywords=234,105,98'
+		'colorSingleStrings=216,166,87'
+		'colorDoubleStrings=216,166,87'
+		'colorBackTickStrings=169,182,101'
+		'colorComments=146,131,116'
+		'colorIncludeKeywords=211,134,155'
+		'colorCommands=169,182,101'
+		'colorVariables=137,180,130'
+		'colorParameters=211,134,155'
+		'colorHereDocs=216,166,87'
+		'colorHereStrings=216,166,87'
+}

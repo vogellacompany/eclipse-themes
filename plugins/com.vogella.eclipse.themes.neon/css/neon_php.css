@@ -1,0 +1,84 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* AI Neon PHP syntax highlighting for the PDT editor (org.eclipse.php.ui).
+ * The key list and style flags mirror PDT's resources/css/dark/preferencestyle.css,
+ * which only applies to the platform's Dark theme; the colours reuse the roles of
+ * neon_jdt.css, so PHP reads like Java. PDT stores a colour as
+ * '#RRGGBB | background | bold | italic | strikethrough | underline'.
+ * PDT is intentionally not a dependency: writing into a preference node whose
+ * owner is not installed is harmless.
+ */
+
+/* ############################## PDT syntax highlighting ############################## */
+
+IEclipsePreferences#org-eclipse-php-ui:org-eclipse-php-ui {
+	preferences:
+		'codeStyleNormal=#E2EAFF | null | null | null | null | null'
+		'editorColorBoundarymaker=#A855F7 | null | true | true | false | false'
+		'editorColorComment=#4C5A7A | null | null | null | null | null'
+		'editorColorHeredoc=#39FF88 | null | null | true | null | null'
+		'editorColorKeyword=#FF2FB9 | null | false | false | false | false'
+		'editorColorLineComment=#4C5A7A | null | null | null | null | null'
+		'editorColorNumber=#39FF88 | null | null | null | null | null'
+		'editorColorPHPDocComment=#5F7099 | null | false | false | false | false'
+		'editorColorPhpdoc=#00B8D4 | null | true | false | false | false'
+		'editorColorString=#39FF88 | null | null | null | null | null'
+		'editorColorVariable=#A6B4D8 | null | null | null | null | null'
+		'editorColorKeywordPublic=#FF2FB9 | null | false | false | false | false'
+		'editorColorKeywordProtected=#FF2FB9 | null | false | false | false | false'
+		'editorColorKeywordPrivate=#FF2FB9 | null | false | false | false | false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ClassHighlighting.color=#00F0FF'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ClassHighlighting.bold=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ClassHighlighting.enabled=true'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ConstantHighlighting.color=#FFC857'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.DeprecatedHighlighting.color=#5A647D'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.DeprecatedHighlighting.strikethrough=true'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.DeprecatedHighlighting.underline=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FieldHighlighting.color=#FFC857'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FunctionHighlighting.color=#A855F7'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.InternalClassHighlighting.color=#00F0FF'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.InternalClassHighlighting.bold=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.InternalConstantHighlighting.color=#FFC857'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.InternalConstantHighlighting.bold=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.InternalFunctionHighlighting.color=#A855F7'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.InternalFunctionHighlighting.italic=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.MethodHighlighting.color=#A855F7'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ParameterVariableHighlighting.color=#A6B4D8'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ParameterVariableHighlighting.underline=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.StaticFieldHighlighting.color=#FFC857'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.StaticMethodHighlighting.color=#A855F7'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.SuperGlobalHighlighting.color=#FFC857'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.TaskTagHighlighting.color=#8C9BC9'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.TaskTagHighlighting.bold=true'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.VarDocCommentHighlighting.color=#5F7099'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.VarDocHighlighting.color=#00B8D4'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.VarDocHighlighting.bold=true'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.AttributeHighlighting.color=#A855F7'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.AttributeHighlighting.bold=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.AttributeHighlighting.italic=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.NamedExpressionHighlighting.color=#A6B4D8'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.NamedExpressionHighlighting.bold=false'
+		'semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.NamedExpressionHighlighting.italic=false'
+}
+
+IEclipsePreferences#org-eclipse-ui-editors:org-eclipse-php-ui {
+	preferences:
+		'PHPReadOccurrenceIndicationColor=18,66,88'
+		'PHPWriteOccurrenceIndicationColor=18,66,88'
+		'overrideIndicatorColorForPHP=140,155,201'
+}
+
+IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-php-ui {
+	preferences:
+		'org.eclipse.php.ui.documentation.backgroundColor=22,28,48'
+		'org.eclipse.php.ui.documentation.foregroundColor=226,234,255'
+}

@@ -1,0 +1,36 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* GitHub Dark shell syntax highlighting for the Bash Editor (de.jcup.basheditor).
+ * The key list mirrors the Bash Editor's css/dark.css, which only applies to the
+ * platform's Dark theme; the values reuse the roles of github_jdt.css, so shell
+ * scripts read like Java.
+ * The Bash Editor is intentionally not a dependency: writing into a preference
+ * node whose owner is not installed is harmless.
+ */
+
+/* ############################## Bash Editor syntax highlighting ############################## */
+
+IEclipsePreferences#de-jcup-basheditor:de-jcup-basheditor {
+	preferences:
+		'colorNormalText=230,237,243'
+		'colorBashKeywords=255,123,114'
+		'colorSingleStrings=165,214,255'
+		'colorDoubleStrings=165,214,255'
+		'colorBackTickStrings=210,168,255'
+		'colorComments=139,148,158'
+		'colorIncludeKeywords=255,166,87'
+		'colorCommands=210,168,255'
+		'colorVariables=121,192,255'
+		'colorParameters=121,192,255'
+		'colorHereDocs=165,214,255'
+		'colorHereStrings=165,214,255'
+}
