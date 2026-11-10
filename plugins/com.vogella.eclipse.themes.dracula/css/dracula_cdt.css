@@ -112,3 +112,16 @@ IEclipsePreferences#org-eclipse-ui-workbench:org-eclipse-cdt-ui {
 		'org.eclipse.cdt.ui.outline.mark.dividercolor=92,94,101'
 		'org.eclipse.cdt.ui.outline.mark.textcolor=98,114,164'
 }
+
+/* ############################## Makefile editor ############################## */
+
+IEclipsePreferences#org-eclipse-cdt-make-ui:org-eclipse-cdt-make-ui {
+	preferences:
+		'org.eclipse.cdt.make.ui.editor.comment=98,114,164'
+		'org.eclipse.cdt.make.ui.editor.default=248,248,242'
+		'org.eclipse.cdt.make.ui.editor.function=80,250,123'
+		'org.eclipse.cdt.make.ui.editor.keyword=255,121,198'
+		'org.eclipse.cdt.make.ui.editor.macro_def=189,147,249'
+		'org.eclipse.cdt.make.ui.editor.macro_ref=255,184,108'
+		'org.eclipse.cdt.make.ui.editor.matching.brackets.color=139,233,253'
+}

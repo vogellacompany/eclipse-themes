@@ -1,0 +1,26 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* Neon Gherkin syntax highlighting for the Cucumber editor.
+ * The editor reads its colours from the theme's colour registry and ships no
+ * dark values at all; the values reuse the roles of neon_jdt.css.
+ */
+
+/* ############################## Gherkin syntax highlighting ############################## */
+
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_comment_colour { color: #4C5A7A; }
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_keyword_colour { color: #FF2FB9; }
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_numeric_literal_colour { color: #39FF88; }
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_placeholder_colour { color: #FFC857; }
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_step_colour { color: #A855F7; }
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_string_colour { color: #39FF88; }
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_tag_colour { color: #A855F7; }
+ColorDefinition#cucumber-eclipse-editor-presentation-gherkin_text_colour { color: #E2EAFF; }
