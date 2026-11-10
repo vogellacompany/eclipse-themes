@@ -1,0 +1,39 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* Gruvbox Python syntax highlighting for PyDev.
+ * The key list mirrors PyDev's e4-pydev-dark_preferencestyle.css, which only
+ * applies to the platform's Dark theme; the values reuse the roles of
+ * gruvbox_jdt.css, so Python reads like Java.
+ * PyDev is intentionally not a dependency: writing into a preference node whose
+ * owner is not installed is harmless.
+ */
+
+/* ############################## PyDev syntax highlighting ############################## */
+
+IEclipsePreferences#org-python-pydev:org-python-pydev {
+	preferences:
+		'BACKQUOTES_COLOR=212,190,152'
+		'CLASS_NAME_COLOR=125,174,163'
+		'CODE_COLOR=212,190,152'
+		'COMMENT_COLOR=146,131,116'
+		'DECORATOR_COLOR=211,134,155'
+		'DOCSTRING_MARKUP_COLOR=137,180,130'
+		'EDITOR_MATCHING_BRACKETS_COLOR=168,153,132'
+		'FUNC_NAME_COLOR=169,182,101'
+		'KEYWORD_COLOR=234,105,98'
+		'NUMBER_COLOR=211,134,155'
+		'OPERATORS_COLOR=231,138,78'
+		'PARENS_COLOR=212,190,152'
+		'SELF_COLOR=234,105,98'
+		'STRING_COLOR=216,166,87'
+		'UNICODE_COLOR=216,166,87'
+}
