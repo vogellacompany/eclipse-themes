@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!-- A fragment of org.eclipse.tm4e.ui, so that its stylesheets make TM4E's preference node
+     theme related: the theme engine styles only the nodes of bundles that contribute themes. -->
+<fragment>
+   <extension point="org.eclipse.tm4e.ui.themes">
+      <theme id="com.vogella.eclipse.themes.tm4e.dracula" name="%theme.dracula" path="themes/dracula.css" dark="true"/>
+      <theme id="com.vogella.eclipse.themes.tm4e.github" name="%theme.github" path="themes/github.css" dark="true"/>
+      <theme id="com.vogella.eclipse.themes.tm4e.gruvbox" name="%theme.gruvbox" path="themes/gruvbox.css" dark="true"/>
+      <theme id="com.vogella.eclipse.themes.tm4e.neon" name="%theme.neon" path="themes/neon.css" dark="true"/>
+      <theme id="com.vogella.eclipse.themes.tm4e.nord" name="%theme.nord" path="themes/nord.css" dark="true"/>
+      <theme id="com.vogella.eclipse.themes.tm4e.onelight" name="%theme.onelight" path="themes/onelight.css" dark="false"/>
+      <theme id="com.vogella.eclipse.themes.tm4e.vscode" name="%theme.vscode" path="themes/vscode.css" dark="true"/>
+   </extension>
+   <extension point="org.eclipse.e4.ui.css.swt.theme">
+      <stylesheet uri="css/dracula_tm4e.css">
+         <themeid refid="com.vogella.eclipse.themes.draculadark"/>
+      </stylesheet>
+      <stylesheet uri="css/github_tm4e.css">
+         <themeid refid="com.vogella.eclipse.themes.githubdark"/>
+      </stylesheet>
+      <stylesheet uri="css/gruvbox_tm4e.css">
+         <themeid refid="com.vogella.eclipse.themes.gruvboxdark"/>
+      </stylesheet>
+      <stylesheet uri="css/neon_tm4e.css">
+         <themeid refid="com.vogella.eclipse.themes.neondark"/>
+      </stylesheet>
+      <stylesheet uri="css/nord_tm4e.css">
+         <themeid refid="com.vogella.eclipse.themes.norddark"/>
+      </stylesheet>
+      <stylesheet uri="css/onelight_tm4e.css">
+         <themeid refid="com.vogella.eclipse.themes.onelight"/>
+      </stylesheet>
+      <stylesheet uri="css/vscode_tm4e.css">
+         <themeid refid="com.vogella.eclipse.themes.vscodedark"/>
+      </stylesheet>
+   </extension>
+</fragment>

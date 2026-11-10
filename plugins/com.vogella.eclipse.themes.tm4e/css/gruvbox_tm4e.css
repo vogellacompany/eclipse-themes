@@ -1,0 +1,17 @@
+/*******************************************************************************
+ * Copyright (c) 2026 vogella GmbH and others.
+ *
+ * This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License 2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-2.0/
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *******************************************************************************/
+
+/* Makes themes/gruvbox.css TM4E's TextMate theme while this theme is active. */
+
+IEclipsePreferences#org-eclipse-tm4e-ui:com-vogella-themes-tm4e {
+	preferences:
+		'org.eclipse.tm4e.ui.themes.defaultDarkTheme=com.vogella.eclipse.themes.tm4e.gruvbox'
+}

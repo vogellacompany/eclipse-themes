@@ -61,7 +61,7 @@ done
 [ ${#batik[@]} -eq 0 ] ||
 	fail "uses @media, @supports or a functional pseudo-class outside the modern bundle" "${batik[@]}"
 
-referenced=$(cat plugins/*/plugin.xml plugins/*/css/*.css \
+referenced=$(cat plugins/*/plugin.xml plugins/*/fragment.xml plugins/*/css/*.css 2>/dev/null \
 	| grep -oE '(platform:/plugin/[^/"]+/|uri=")css/[A-Za-z0-9_.-]+\.css' \
 	| sed -E 's#^platform:/plugin/([^/]+)/#\1 #; s#^uri="#- #' | sort -u)
 orphans=()
@@ -70,7 +70,7 @@ for sheet in plugins/*/css/*.css; do
 	bundle=${bundle%%/*}
 	file=css/${sheet##*/}
 	if ! grep -qxF "$bundle $file" <<<"$referenced" \
-		&& ! grep -q "\"$file\"" "plugins/$bundle/plugin.xml" 2>/dev/null; then
+		&& ! grep -qs "\"$file\"" "plugins/$bundle/plugin.xml" "plugins/$bundle/fragment.xml"; then
 		orphans+=("$sheet")
 	fi
 done

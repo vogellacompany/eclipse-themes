@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-Localization: fragment
+Bundle-SymbolicName: com.vogella.eclipse.themes.tm4e;singleton:=true
+Bundle-Version: 3.1.0.qualifier
+Fragment-Host: org.eclipse.tm4e.ui
+Automatic-Module-Name: com.vogella.eclipse.themes.tm4e

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vogella.eclipse.themes.tm4e.feature"
+      label="vogella Themes for TM4E Editors"
+      version="3.1.0.qualifier"
+      provider-name="vogella GmbH">
+
+   <description>
+      TextMate themes matching each vogella theme, for editors built on TM4E such as the
+      vogella AsciiDoc editor. Installs only where TM4E is installed.
+   </description>
+
+   <copyright>
+      Copyright (c) 2026 vogella GmbH and others.
+   </copyright>
+
+   <license url="https://www.eclipse.org/legal/epl-2.0/">
+      Eclipse Public License 2.0
+   </license>
+
+   <plugin id="com.vogella.eclipse.themes.tm4e" download-size="0" install-size="0" version="0.0.0" fragment="true"/>
+
+</feature>
