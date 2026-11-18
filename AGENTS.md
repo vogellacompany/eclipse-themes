@@ -146,7 +146,7 @@ It sits in `com.vogella.eclipse.themes.tm4e.feature`, included with `optional="t
 
 ## Before pushing
 
-Run `./releng/generate-tm4e-themes.py`, `./releng/check-tokens.sh` and `mvn clean verify`, and commit the regenerated TextMate themes.
+Run `./releng/generate-tm4e-themes.py`, `./releng/check-tokens.sh` and `./mvnw clean verify`, and commit the regenerated TextMate themes.
 The script checks the token contract, that syntax Batik rejects appears only in the modern bundle, that every stylesheet is loaded, and that all themes' preference, JDT, CDT, PyDev, Bash and PHP sheets set the same keys; a key only some themes set on purpose goes into its `optional_keys` list.
 Then install into the running IDE and restart, because a stylesheet that parses is not a stylesheet that renders:
 `eclipse_add_repository` with `refresh`, `eclipse_update`, `eclipse_restart`.
