@@ -5,9 +5,17 @@
    </feature>
    <!-- Explicit root, so that the resolution picks this variant and not the legacy one -->
    <feature id="com.vogella.eclipse.themes.modern.feature" version="0.0.0"/>
+   <feature id="com.vogella.eclipse.themes.launcher.feature" version="0.0.0">
+      <category name="com.vogella.eclipse.themes.optional"/>
+   </feature>
    <category-def name="com.vogella.eclipse.themes" label="vogella Eclipse Themes">
       <description>
          Additional themes for the Eclipse IDE.
+      </description>
+   </category-def>
+   <category-def name="com.vogella.eclipse.themes.optional" label="vogella Eclipse Themes: Optional Components">
+      <description>
+         Additions that the themes do not need, installed one by one.
       </description>
    </category-def>
 </site>
