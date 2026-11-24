@@ -4,7 +4,7 @@
 
 Additional themes for the Eclipse IDE, shipped as an installable p2 update site.
 The themes are pure resource plugins: CSS and preference definitions only.
-The one bundle with Java code is `com.vogella.eclipse.themes.menu`, which adds the theme menu for releases before 2026-12.
+The bundles with Java code are `com.vogella.eclipse.themes.menu`, which adds the theme menu for releases before 2026-12, and the optional workspace launcher.
 
 ## Installing
 
@@ -18,6 +18,9 @@ One feature installs all seven themes and *vogella Theme Icon Sets*, which repla
 The icon sets need Eclipse 2026-03 or later; on older releases the themes install without them.
 Then switch to the installed theme under *Window > Appearance > Themes* or *Preferences > General > Appearance*.
 Eclipse 2026-12 and later bring that menu themselves; on older releases the theme feature adds it.
+
+The category *Optional Components* holds *vogella Workspace Launcher*, which the theme feature does not install.
+It replaces the workspace prompt at startup with a styled one in the colours of the default theme, which it also lets you choose, and its settings switch back to the classic prompt for one start or for good.
 
 The site carries the newest build and nothing else, published from `main` by the [Update site workflow](.github/workflows/update-site.yml).
 Older versions are not supported: the previous build is dropped when a new one is published, so update rather than pin.

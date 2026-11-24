@@ -113,6 +113,14 @@ It is gated the same way as the CSS variants: `Require-Bundle: org.eclipse.ui.id
 It reuses the platform's menu id `org.eclipse.ui.appearance.themes` and separator name, so other contributions can anchor to one id on every release.
 The bundle builds only while both targets are older than 2026-12; when a target moves to 2026-12, give this bundle and `com.vogella.eclipse.themes.menu.feature` a `pom.xml` pinning them to an older train, as the modern bundle and feature do.
 
+## The optional workspace launcher
+
+`plugins/com.vogella.eclipse.themes.launcher` replaces the platform's workspace prompt with `StyledChooseWorkspaceDialog`.
+An OSGi `WeavingHook` prepends a call to `StyledWorkspaceLauncher.show` to `IDEApplication.showChooseWorkspaceDialog`, which returns early when it returns true; on false, or when the weave fails, the classic dialog opens, so a platform change degrades to the stock prompt rather than a broken start.
+Its `p2.inf` marks the bundle started, because the weaving hook has to be registered before `IDEApplication` loads, which happens before bundles start lazily.
+Before a workspace is chosen there is no instance scope, so its own switch and the default theme it writes live in `UserScope` only.
+It sits in `com.vogella.eclipse.themes.launcher.feature`, listed in the update site's *Optional Components* category and included by no other feature, so it is installed only on request.
+
 ## The recurring platform bug
 
 A bundle ships its dark values in a stylesheet bound with `themeid refid="org.eclipse.e4.ui.css.theme.e4_dark"`.

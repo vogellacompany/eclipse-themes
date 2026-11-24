@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vogella.eclipse.themes.launcher.feature"
+      label="vogella Workspace Launcher"
+      version="3.1.0.qualifier"
+      provider-name="vogella GmbH">
+
+   <description>
+      Replaces the workspace selection dialog at startup with a styled one in the colours of the default theme.
+      Its settings, behind the gear button, choose the default theme and switch back to the classic dialog.
+      It can also be switched off under Preferences &gt; General &gt; Startup and Shutdown &gt; Workspaces &gt; Workspace Launcher.
+   </description>
+
+   <copyright>
+      Copyright (c) 2026 vogella GmbH and others.
+   </copyright>
+
+   <license url="https://www.eclipse.org/legal/epl-2.0/">
+      Eclipse Public License 2.0
+   </license>
+
+   <plugin id="com.vogella.eclipse.themes.launcher" download-size="0" install-size="0" version="0.0.0"/>
+
+</feature>
